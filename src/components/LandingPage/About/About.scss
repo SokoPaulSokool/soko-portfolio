@@ -1,0 +1,52 @@
+$primary-color: #2098d1;
+$accent-color: #fc2205;
+
+.about {
+  .bio {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border: 3px solid $primary-color;
+    border-radius: 50%;
+    width: 30vw;
+    height: 30vw;
+    &-circle {
+      background: rgba($primary-color, 0.6);
+      border-radius: 50%;
+      width: 15vw;
+      height: 15vw;
+    }
+    &-text {
+      width: 80%;
+    }
+  }
+
+  .principles {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: flex;
+    li {
+      padding: 0 10px;
+    }
+    p {
+      font-size: 0.8em;
+      line-height: 1.2em;
+    }
+  }
+
+  .lif-red {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 60px;
+
+    img {
+      width: 40px;
+      height: 40px;
+      transform: rotate(180deg);
+    }
+  }
+}
