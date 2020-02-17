@@ -1,35 +1,83 @@
 import React, { Component } from 'react';
 import './Skills.scss';
-import redLif from '../../../assets/SVG/lifRedStk.svg';
-import redLifFull from '../../../assets/SVG/lifRed.svg';
 import blueLif from '../../../assets/SVG/lifBlue.svg';
-import stem from '../../../assets/SVG/stem.svg';
+import mySkills from '../../../assets/data/skills.json';
 
-export function ToolTip({ data }) {
-  return (
-    <div className="my-tooltip">
-      <h6>Languages</h6>
-      <ul>
-        {data.map(d => {
+
+export class CollapsePage extends Component {
+  state = {
+    collapseID: 'Languages',
+    data: [1, 2, 3, 4, 5, 6, 7],
+    skills: mySkills
+  };
+
+  toggleCollapse = collapseID => {
+    this.setState(prevState => ({
+      collapseID: prevState.collapseID !== collapseID ? collapseID : ''
+    }));
+  };
+
+  colapseCheck = (skill,whenTrue,whenFalse) => {
+    return this.state.collapseID === skill.title ? whenTrue : whenFalse;
+  };
+
+  render() {
+    return (
+      <div id="accordion">
+        {Object.keys(this.state.skills).map((dat, i) => {
+          const skill = this.state.skills[dat];
           return (
-            <li key={d + 'ss'}>
-              <p>Javascript</p>
-              <div className="rating">
-                <img src={redLifFull} alt="" />
-                <p>30%</p>
+            <div className={"card "+this.colapseCheck(skill,'card-border','')} key={skill.title}>
+              <div
+                className={this.state.collapseID === skill.title ? 'card-header card-header--highlight' : 'card-header card-header--no-highlight'}
+                id="headingOne"
+                onClick={() => this.toggleCollapse(skill.title)}
+              >
+                <h5 className="mb-0">
+                  <span
+                    className=" "
+                    data-toggle="collapse"
+                    data-target="#collapseOne"
+                    aria-expanded="true"
+                    aria-controls="collapseOne"
+                  >
+                    {skill.title}
+                  </span>
+                 
+                  
+                </h5>
+                 <i className="header-icon fas fa-arrow-alt-circle-down"></i>
               </div>
-            </li>
+
+              <div
+                id="collapseOne"
+                className={'collapse ' + this.colapseCheck(skill,'show','')}
+                aria-labelledby="headingOne"
+                data-parent="#accordion"
+              >
+                <div className="card-body">
+                  <ul className="skill-drops">
+                    {skill.details.map((detail, i) => {
+                      return (
+                        <li key={i + 'ss'}>
+                          <h6 className="skill-header">{detail.name}</h6>
+                          <div className="rating">
+                            <img className="" src={blueLif} alt="" />
+                            <p className="rating-percentage">{detail.rate}</p>
+                          </div>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                  <p>{skill.summary}</p>
+                </div>
+              </div>
+            </div>
           );
         })}
-      </ul>
-      <p>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae
-        vitae, earum atque vero nisi at qui necessitatibus. Voluptates
-        repudiandae inventore consequuntur necessitatibus earum eveniet
-        voluptatibus placeat. Optio voluptatibus esse tempore.
-      </p>
-    </div>
-  );
+      </div>
+    );
+  }
 }
 
 export default class Skills extends Component {
@@ -40,49 +88,16 @@ export default class Skills extends Component {
 
   render() {
     return (
-      <div className="container-fluid comp-view skills">
+      <div id="skills" className="container-fluid comp-view skills">
         <div className="row text-center ">
           <div className="col-12 col-md-5 ">
             <h2>Skills</h2>
-            <div className="tree">
-              <div className="lif">
-                <ul>
-                  <li className="skill">
-                    <ToolTip data={this.state.data} />
-                    <p>UI Design Tools cc</p>
-                  </li>
-                  <li className="skill">
-                    <ToolTip data={this.state.data} />
-                    <p>UI Design Tools</p>
-                  </li>
-                </ul>
-                <ul>
-                  <li className="skill">
-                    <ToolTip data={this.state.data} />
-                    <p>UI Design Tools</p>
-                  </li>
-                  <li className="skill">
-                    <ToolTip data={this.state.data} />
-                    <p>UI Design Tools</p>
-                  </li>
-                </ul>
-                <ul>
-                  <li className="skill">
-                    <ToolTip data={this.state.data} />
-                    <p>UI Design Tools</p>
-                  </li>
-                  <li className="skill">
-                    <ToolTip data={this.state.data} />
-                    <p>UI Design Tools</p>
-                  </li>
-                </ul>
-                <img alt="" className="" src={redLif} />
-              </div>
-              <img alt="" className="stem" src={stem} />
+            <div className="my-skills">
+              <CollapsePage />
             </div>
           </div>
           <div className="col-12 col-md-7  p-3">
-            <h2>Process</h2>
+            <h2>General Work Process</h2>
             <div className="process ">
               <img alt="" src={blueLif} className="big-lif" />
               <div className="details">
@@ -90,8 +105,7 @@ export default class Skills extends Component {
                   <li>
                     <div className="circle"></div>
                     <p>
-                      Testing code in multiple browsers to ensure cross browser
-                      compatibility
+                     Analysing and designing mockups for creating appropriate UI components and architecting the styles codebase
                     </p>
                   </li>
                   <li>
@@ -104,22 +118,19 @@ export default class Skills extends Component {
                   <li>
                     <div className="circle"></div>
                     <p>
-                      Testing code in multiple browsers to ensure cross browser
-                      compatibility
+                    Following coding style if required
                     </p>
                   </li>
                   <li>
                     <div className="circle"></div>
                     <p>
-                      Testing code in multiple browsers to ensure cross browser
-                      compatibility
+                      Collaborating with UI/UX designers and backend developers
                     </p>
                   </li>
                   <li>
                     <div className="circle"></div>
                     <p>
-                      Testing code in multiple browsers to ensure cross browser
-                      compatibility
+                     Consistently maintaining communication with all stakeholders
                     </p>
                   </li>
                 </ul>

@@ -1,0 +1,70 @@
+{
+  "languages": {
+    "title": "Languages",
+    "details": [
+      { "name": "Javascript", "rate": "90%" },
+      { "name": "Python", "rate": "70%" },
+      { "name": "Java", "rate": "80%" },
+      { "name": "TypeScript", "rate": "90%" }
+    ],
+    "summary": "Am more experienced in Javascript developer because I have had more interractions with the language. Next is java. I have used java in android application development. I have some experience with python. I used python Django and Flask in some of my projects."
+  },
+  "frontEnd": {
+    "title": "Front-end-Frameworks",
+    "details": [
+      { "name": "Angular", "rate": "90%" },
+      { "name": "React", "rate": "80%" },
+      { "name": "Android-Java", "rate": "90%" }
+    ],
+     "summary": "There are a lot of arguments around which frameworks to us. Well it all depends on the team you are working with and the size of the project. With angular, I find it easy to join any team because the conventions are the same. React is also good especially on small projects. Anyway thats my view."
+
+  },
+  "backEnd": {
+    "title": "Back-end-Frameworks",
+    "details": [
+      { "name": "Express-Node", "rate": "80%" },
+      { "name": "Django-python", "rate": "60%" },
+      { "name": "Flask-python", "rate": "60%" }
+    ],
+     "summary": "Django is cool because its easy to set up. It has standard which make it easy to work on any Django project. Express make me maintain javascript both in the back-end and front-end"
+
+  },
+  "databases": {
+    "title": "Databases",
+    "details": [
+      { "name": "MySQL", "rate": "70%" },
+      { "name": "Postgres", "rate": "70%" },
+      { "name": "MongDB", "rate": "90%" },
+      { "name": "Firebase databases", "rate": "80%" }
+    ],
+    "summary": "I have worked with both SQL and NoSQl database."
+
+  },
+  "designTools": {
+    "title": "UI Design tools",
+    "details": [
+      { "name": "Adobe Illustrator", "rate": "70%" }
+    ],
+    "summary": "Illustrator brings out my creative design skills. Its interesting to design mock-ups using this tool"
+
+  },
+  "hosting": {
+    "title": "Hosting Services",
+    "details": [
+      { "name": "AWS EC2", "rate": "60%" },
+      { "name": "AWS EBS", "rate": "60%" },
+      { "name": "GCP App Engine", "rate": "70%" },
+      { "name": "Firebase", "rate": "70%" }
+    ],
+     "summary": "I have experience managing linux servers and also using PAAS like appengine and EBS"
+
+  },
+  "projectManagementTools": {
+    "title": "Project Management Tools",
+    "details": [
+      { "name": "Pivotal Tracker", "rate": "70%" }
+    ],
+    "summary": "This tool helps me manage abd plan my work ahead of time"
+
+  }
+}

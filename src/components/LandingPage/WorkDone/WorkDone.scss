@@ -1,24 +1,23 @@
-$primary-color: #2098d1;
-$accent-color: #fc2205;
+@import '../../../variables.scss';
 
 .work-done {
-  min-height: 100vh;
   width: 100vw;
 }
 
 .work-item {
   width: 100%;
-  height: 200px;
+  height: 250px;
   background: $primary-color;
   position: relative;
-  margin: 10px 5px;
-  // box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.75);
+  margin: 30px 10px !important;
   border-radius: 6px;
   background-color: $primary-color;
   transition: all 0.4s ease-in;
+  border: 2px solid $primary-color ;
+  margin: 3px;
   cursor: pointer;
   &:hover {
-    box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.75),   6px 6px 15px rgba($primary-color, 0.75);;
+    box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.45),   3px 3px 15px rgba($primary-color, 0.45);
     animation: bounce 0.3s ease-in-out;
     .buttons{
       opacity: 1;
@@ -33,23 +32,35 @@ $accent-color: #fc2205;
   .buttons {
     opacity: 0;
     width: 100%;
-    height: 30%;
+    height: 35%;
     position: absolute;
     bottom: 0;
+    font-size: 0.8em;
+    color: $white;
    
     transition: all 0.4s ease-in;
     .cover {
       width: 100%;
       height: 100%;
+      position: absolute;
+      top: 0;
       background-color: rgba(#000000, 0.6);
+    }
+    .project-name{
+      z-index: 30;
+      top: 2px;
+      width: 100%;
+      position: absolute;
+      text-align: center;
     }
     .mybtn {
       position: absolute;
       top :50%;
-      transform: translateY(-50%);
+      transform: translateY(-10%);
       background: $primary-color;
       border-radius: 10px;
       color: white;
+      padding: 2px 5px;
       &-site {
         left: 10px;
       }
@@ -63,7 +74,7 @@ $accent-color: #fc2205;
 .items {
   width: 100%;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: flex-end;
   flex-wrap: wrap;
 }

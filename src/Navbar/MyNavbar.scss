@@ -1,0 +1,22 @@
+@import '../variables.scss';
+
+nav{
+ width: 100vw;
+ min-height: 70px;
+ background-color: $primary-color;
+ z-index: 5000;
+ position: fixed;
+ color: $white;
+
+ // ul{
+ //  position: absolute;
+ //  width: 50%;
+ //  right: 10px;
+ //  top: 50%;
+ //  transform: translateY(-50%);
+ //  color: $white;
+ // }
+ .nav-item{
+  margin: 0 20px;
+ }
+}

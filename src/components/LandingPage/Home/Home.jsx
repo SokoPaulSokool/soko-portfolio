@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+import { Link, animateScroll as scroll } from 'react-scroll';
 import './Home.scss';
+import profileImage from '../../../assets/samples/profileImage.jpeg'
 
 export default class Home extends Component {
   render() {
@@ -20,16 +22,43 @@ export default class Home extends Component {
             <div className="menu">
               <ul>
                 <li>
-                  <div>Skills</div>
-                  <div className="indicators"></div>
+                  <Link
+                    activeClass="active nav-link"
+                    to="skills"
+                    spy={true}
+                    smooth={true}
+                    offset={-70}
+                    duration={500}
+                  >
+                    <div>Skills</div>
+                    <div className="indicators"></div>
+                  </Link>
                 </li>
                 <li>
-                  <div>Portfolio</div>
-                  <div className="indicators"></div>
+                  <Link
+                    activeClass="active nav-link"
+                    to="workDone"
+                    spy={true}
+                    smooth={true}
+                    offset={-70}
+                    duration={500}
+                  >
+                    <div>Portfolio</div>
+                    <div className="indicators"></div>
+                  </Link>
                 </li>
                 <li>
-                  <div>Process</div>
-                  <div className="indicators"></div>
+                  <Link
+                    activeClass="active nav-link"
+                    to="about"
+                    spy={true}
+                    smooth={true}
+                    offset={-70}
+                    duration={500}
+                  >
+                    <div>About</div>
+                    <div className="indicators"></div>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -39,7 +68,9 @@ export default class Home extends Component {
               <div className="side-circle__rotate"></div>
               <div className="side-circle__profile">
                 <div className="bio">
-                  <div className="bio-circle"></div>
+                  <div className="bio-circle">
+                    <img src={profileImage} alt=""/>
+                  </div>
                   <div className="bio-text">
                     <h3>Soko Paul</h3>
                     <p>

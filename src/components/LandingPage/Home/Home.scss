@@ -1,11 +1,9 @@
-$primary-color: #2098d1;
-$accent-color: #fc2205;
-
+@import '../../../variables.scss';
 
 ul {
   list-style: none;
-  display: flex;
-  justify-content: space-between;
+  // display: flex;
+  // justify-content: space-between;
 }
 
 .headers {
@@ -19,16 +17,16 @@ ul {
       color: $primary-color;
     }
     h1 {
-      line-height: 0.8;
+      line-height: 0.9;
     }
   }
 }
 
 .hero {
-  // min-height: 80vh;
   span {
     color: $accent-color;
   }
+  margin-bottom: 5vh;
 }
 
 .menu {
@@ -39,6 +37,9 @@ ul {
 
   ul {
     padding-left: 0;
+     list-style: none;
+  display: flex;
+  justify-content: space-between;
     li {
       display: flex;
       flex-direction: column;
@@ -56,6 +57,11 @@ ul {
   position: absolute;
   left: -10vw;
   top: -10vh;
+}
+
+.side{
+  min-height: 40vh;
+  margin-bottom: 10vh;
 }
 
 .side-circle {
@@ -82,8 +88,8 @@ ul {
     position: absolute;
     border: 6px solid $primary-color;
     border-radius: 50%;
-    width: 25vw;
-    height: 25vw;
+    width: 40vw;
+    height: 40vw;
     margin: 10px;
     top: 20%;
     left: 5%;
@@ -101,8 +107,15 @@ ul {
     &-circle {
       background: rgba($primary-color, 0.6);
       border-radius: 50%;
-      width: 15vw;
-      height: 15vw;
+      width: 200px;
+      height: 200px;
+      overflow: hidden;
+      border: 1px solid $primary-color;
+      img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
     }
     &-text {
       width: 80%;
@@ -127,11 +140,9 @@ ul {
 
 @keyframes rotateCircle {
   0% {
-    // background-color: $primary-color;
     transform: rotate(0deg);
   }
   100% {
-    // background-color: $accent-color;
     transform: rotate(180deg);
   }
 }

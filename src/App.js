@@ -1,18 +1,18 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch,  } from 'react-router-dom';
-import './App.css';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import './App.scss';
 import LandingPage from './components/LandingPage/LandingPage';
-import Process from "./components/Process/ProjectDetails";
-
-
+import Process from './components/Process/ProjectDetails';
+import MyNavbar from './Navbar/MyNavbar';
 
 function App() {
   return (
     <div className="App">
-      <Router >
+      <Router>
+        <MyNavbar />
         <Switch>
           <Route exact path="/" component={LandingPage} />
-          <Route exact path="/process" component={Process} />
+          <Route exact path="/details" component={Process} />
         </Switch>
       </Router>
     </div>

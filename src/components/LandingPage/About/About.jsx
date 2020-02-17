@@ -26,22 +26,22 @@ export default class About extends Component {
           <div className="col-12 col-md-7">
             <ul className="principles text-center">
               <li>
-                <h5>msmm</h5>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <h5>Fast learner</h5>
+                <p>I find it easy to learn new technologies. I have been in situations where I had to learn new technologies and frameworks. This trained me to learn how to look for resources and catch up as fast as possible.</p>
               </li>
               <li>
-                <h5>msmm</h5>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <h5>Great Team Player</h5>
+                <p>I love working in teams. Teams make work interesting, smooth and lead to productive quality results. When I work in a team, I get to learn and unlearn from my teammates. Teams make me a better developer.</p>
               </li>
               <li>
-                <h5>msmm</h5>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <h5>Passionate About technology</h5>
+                <p>I have so much passion about technology. My passion has made me curious about new technologies. This has made me research and update myself and learn a lot. Every day I always ask myself, “what should I learn today?” Am always learning.</p>
               </li>
             </ul>
-            <div className="lif-red" >
+            {/* <div className="lif-red" >
               <img src={redLif} alt="" />
-            </div>
-            <h2>Ramdom Facts</h2>
+            </div> */}
+            {/* <h2>Ramdom Thoughts</h2>
             <div>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit.
@@ -49,25 +49,8 @@ export default class About extends Component {
                 pariatur earum aliquid ex debitis eum non porro dolore culpa
                 soluta, nostrum magni.
               </p>
-              <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic
-                culpa ad aspernatur, obcaecati labore explicabo voluptate illo
-                dolorem? Natus et laboriosam modi tempora? Maiores eaque
-                possimus inventore et commodi eveniet.
-              </p>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Laboriosam, quae, facere animi vero facilis earum id, error sunt
-                rerum doloribus nisi minus aperiam accusantium officia! Incidunt
-                assumenda cum mollitia distinctio.
-              </p>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Laboriosam, quae, facere animi vero facilis earum id, error sunt
-                rerum doloribus nisi minus aperiam accusantium officia! Incidunt
-                assumenda cum mollitia distinctio.
-              </p>
-            </div>
+            
+            </div> */}
           </div>
         </div>
       </div>
