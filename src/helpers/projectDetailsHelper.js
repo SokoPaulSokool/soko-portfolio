@@ -4,6 +4,7 @@ import wesgas from '../assets/samples/wesgas.png';
 import portfolio from '../assets/samples/portfolio.png';
 import myDiary from '../assets/samples/myDiary.png';
 import borrocracyMobile from '../assets/samples/borrocracyMobile.png';
+import fastFood from '../assets/samples/fastFood.png';
 
 export const projectDetails = {
   sep: {
@@ -13,6 +14,7 @@ export const projectDetails = {
       url: 'https://sepfirebaseproject-cd7ec.firebaseapp.com/',
       profileImage: sep
     },
+    repos:[],
     frameworks: {
       frontEnd: ['angular'],
       backEnd: ['firebase Cloud Functions', 'node'],
@@ -27,27 +29,6 @@ export const projectDetails = {
         image: sep,
         challenge: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
         solution: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.'
-      },
-      {
-        step: '',
-        details: '',
-        image: sep,
-        challenge: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
-        solution: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.'
-      },
-      {
-        step: '',
-        details: '',
-         image: sep,
-        challenge: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
-        solution: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.'
-      },
-      {
-        step: '',
-        details: '',
-         image: sep,
-        challenge: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
-        solution: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.'
       }
     ]
   },
@@ -58,8 +39,9 @@ export const projectDetails = {
       url: 'https://borrocracy-b58eb.firebaseapp.com/',
       profileImage: borrocracyWeb
     },
+     repos:[{name:'Angular Repo',link:'https://github.com/SokoPaulSokool/borrocracy-web'}, {name:'React Repo',link:'https://github.com/SokoPaulSokool/borrocracy-react'},{more:true}],
     frameworks: {
-      frontEnd: ['angular'],
+      frontEnd: ['angular','React'],
       backEnd: ['firebase Cloud Functions', 'node'],
       others: ['TensorFlowjs', 'AWS EBS', 'Adobe Illustrator']
     },
@@ -115,6 +97,7 @@ export const projectDetails = {
       url: 'https://play.google.com/store/apps/details?id=com.borrocracy',
       profileImage: borrocracyMobile
     },
+     repos:[],
     frameworks: {
       frontEnd: ['android', 'Java'],
       backEnd: ['firebase Cloud Functions', 'node'],
@@ -173,6 +156,7 @@ export const projectDetails = {
         'https://play.google.com/store/apps/details?id=eu.fulusi.wesgas.client',
       profileImage: wesgas
     },
+     repos:[],
     frameworks: {
       frontEnd: ['android', 'Java'],
       backEnd: ['firebase Cloud Functions', 'node'],
@@ -182,32 +166,25 @@ export const projectDetails = {
       'This is an application that helps wesges customers buy gas, refill and also buy other accessories. The orders are delivered to the customers’ desired location. Payment is made through mobile money.',
     process: [
       {
-        step: '',
-        details: '',
-        image:  wesgas,
-        challenge: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
-        solution: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.'
+        step: 'Got introduced to the project',
+        details: 'The company needed someone to replace their developer who was leaving. I was briefed about the app idea and given the code to proceed.',
+        image: wesgas,
+        challenge: 'The code was not well organised and well structured. ',
+        solution: 'Since the codebase was not big and I was the only person going to work on the code I  reorganised it to the way that would make me be fast.'
       },
       {
-        step: '',
-        details: '',
-       image:  wesgas,
-        challenge: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
-        solution: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.'
+        step: 'Improve on the UI',
+        details: 'I improved the UI of the application, designed icons in adobe illustrator and create a uniform theme for the application.',
+        image: wesgas,
+        challenge: '',
+        solution: 'I learned to advise the client on a design but respect their final decision.'
       },
       {
-        step: '',
-        details: '',
-        image:  wesgas,
-        challenge: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
-        solution: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.'
-      },
-      {
-        step: '',
-        details: '',
-        image:  wesgas,
-        challenge: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
-        solution: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.'
+        step: 'Get the new flow of the application',
+        details: 'I got a clear explanation of how the application views were supposed to flow. I had to implement add to cart, pick location and time, and discounts',
+        image: wesgas,
+        challenge: '',
+        solution: 'I learned how to use a location picker in android and google maps.'
       }
     ]
   },
@@ -218,6 +195,7 @@ export const projectDetails = {
       url: 'https://soko-paul.web.app/',
       profileImage: portfolio
     },
+     repos:[{name:'Portfolio Repo',link:'https://github.com/SokoPaulSokool/soko-portfolio'}],
     frameworks: {
       frontEnd: ['React', 'Javascript'],
       backEnd: [],
@@ -229,28 +207,7 @@ export const projectDetails = {
       {
         step: '',
         details: '',
-        image:  portfolio,
-        challenge: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
-        solution: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.'
-      },
-      {
-        step: '',
-        details: '',
-        image:  portfolio,
-        challenge: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
-        solution: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.'
-      },
-      {
-        step: '',
-        details: '',
-        image:  portfolio,
-        challenge: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
-        solution: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.'
-      },
-      {
-        step: '',
-        details: '',
-       image:  portfolio,
+        image: portfolio,
         challenge: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
         solution: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.'
       }
@@ -263,6 +220,7 @@ export const projectDetails = {
       url: 'https://sokopaulsokool.github.io/MyDiary/UI',
       profileImage: myDiary
     },
+     repos:[{name:'My Diary Repo',link:'https://github.com/SokoPaulSokool/MyDiary'}],
     frameworks: {
       frontEnd: ['Vanila Javascript', 'HTML', 'css'],
       backEnd: ['Python', 'Flask'],
@@ -288,7 +246,7 @@ export const projectDetails = {
       {
         step: '',
         details: '',
-         image: myDiary,
+        image: myDiary,
         challenge: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
         solution: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.'
       },
@@ -300,17 +258,36 @@ export const projectDetails = {
         solution: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.'
       }
     ]
+  },
+  fastFood: {
+    summary:  {
+      id: 'fastFood',
+      projectName: 'Fast Food Fast',
+      url: 'https://fast-f-fast-staging.herokuapp.com',
+      profileImage: fastFood
+    },
+     repos:[{name:'My Diary Repo',link:'https://github.com/SokoPaulSokool/fast_food_fast_react'}],
+    frameworks: {
+      frontEnd: ['Vanila Javascript', 'HTML', 'css'],
+      backEnd: ['Python', 'Flask'],
+      others: ['Adobe Illustrator']
+    },
+    description:
+      'This is a website helps people buy fast foods',
+    process: [
+      {
+        step: '',
+        details: '',
+        image: fastFood,
+        challenge: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+        solution: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.'
+      }
+    ]
   }
 };
 
 export function getProjects() {
   return [
-    {
-      id: 'sep',
-      projectName: 'Students Evaluation Protocal',
-      url: 'https://sepfirebaseproject-cd7ec.firebaseapp.com/',
-      profileImage: sep
-    },
     {
       id: 'borrocracyWeb',
       projectName: 'Borrocracy Web',
@@ -329,6 +306,18 @@ export function getProjects() {
       url:
         'https://play.google.com/store/apps/details?id=eu.fulusi.wesgas.client',
       profileImage: wesgas
+    },
+    {
+      id: 'sep',
+      projectName: 'Students Evaluation Protocal',
+      url: 'https://sepfirebaseproject-cd7ec.firebaseapp.com/',
+      profileImage: sep
+    },
+       {
+      id: 'fastFood',
+      projectName: 'Fast Food Fast',
+      url: 'https://fast-f-fast-staging.herokuapp.com',
+      profileImage: fastFood
     },
     {
       id: 'portfolio',

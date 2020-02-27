@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './About.scss';
 import redLif from '../../../assets/SVG/lifRed.svg';
+import profileImage from '../../../assets/samples/profileImage.jpeg';
 
 export default class About extends Component {
   render() {
@@ -13,7 +14,9 @@ export default class About extends Component {
         <div className="row">
           <div className="col-12 col-md-5">
             <div className="bio">
-              <div className="bio-circle"></div>
+              <div className="bio-circle">
+                <img src={profileImage} alt="" />
+              </div>
               <div className="bio-text">
                 <h3>Soko Paul</h3>
                 <p>
@@ -27,30 +30,60 @@ export default class About extends Component {
             <ul className="principles text-center">
               <li>
                 <h5>Fast learner</h5>
-                <p>I find it easy to learn new technologies. I have been in situations where I had to learn new technologies and frameworks. This trained me to learn how to look for resources and catch up as fast as possible.</p>
+                <p>
+                  I find it easy to learn new technologies. I have been in
+                  situations where I had to learn new technologies and
+                  frameworks. This trained me to learn how to look for resources
+                  and catch up as fast as possible.
+                </p>
               </li>
               <li>
                 <h5>Great Team Player</h5>
-                <p>I love working in teams. Teams make work interesting, smooth and lead to productive quality results. When I work in a team, I get to learn and unlearn from my teammates. Teams make me a better developer.</p>
+                <p>
+                  I love working in teams. Teams make work interesting, smooth
+                  and lead to productive quality results. When I work in a team,
+                  I get to learn and unlearn from my teammates. Teams make me a
+                  better developer.
+                </p>
               </li>
               <li>
                 <h5>Passionate About technology</h5>
-                <p>I have so much passion about technology. My passion has made me curious about new technologies. This has made me research and update myself and learn a lot. Every day I always ask myself, “what should I learn today?” Am always learning.</p>
+                <p>
+                  I have so much passion about technology. My passion has made
+                  me curious about new technologies. This has made me research
+                  and update myself and learn a lot. Every day I always ask
+                  myself, “what should I learn today?” Am always learning.
+                </p>
               </li>
             </ul>
-            {/* <div className="lif-red" >
+            <div className="lif-red">
               <img src={redLif} alt="" />
-            </div> */}
-            {/* <h2>Ramdom Thoughts</h2>
-            <div>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Expedita quod dolorum eaque officiis tempore fuga a voluptates
-                pariatur earum aliquid ex debitis eum non porro dolore culpa
-                soluta, nostrum magni.
-              </p>
-            
-            </div> */}
+            </div>
+            <h5>Others</h5>
+            <ol>
+              <li>
+                <p>
+                  I love art and graphics. It keeps my creative mind active.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Music make my day flow well. Some times it keeps me focused as
+                  I work.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Road trips and visiting new places, looking at nature keep me
+                  fresh.
+                </p>
+              </li>
+                 <li>
+                <p>
+                  I love watching movies especially animations.
+                </p>
+              </li>
+            </ol>
           </div>
         </div>
       </div>

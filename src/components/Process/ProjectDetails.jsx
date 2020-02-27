@@ -1,10 +1,15 @@
 import React, { Component } from 'react';
 import { MDBIcon } from 'mdbreact';
-import { animateScroll as scroll } from "react-scroll";
+import { animateScroll as scroll } from 'react-scroll';
 import './ProjectDetails.scss';
 import { getProjectDetails } from '../../helpers/projectDetailsHelper';
 
-export function ProcessCarouselDetails({ position, anim, process ,processPosition}) {
+export function ProcessCarouselDetails({
+  position,
+  anim,
+  process,
+  processPosition
+}) {
   // console.log(process);
   return (
     <div className={anim + ' carousel-process-' + position}>
@@ -13,7 +18,7 @@ export function ProcessCarouselDetails({ position, anim, process ,processPositio
       </div>
       <div className="carousel-process__details container">
         <div className="">
-          <h5>Step {processPosition+1}</h5>
+          <h5>Step {processPosition + 1}</h5>
           <h6>{process?.step}</h6>
           <p>{process?.details}</p>
         </div>
@@ -88,7 +93,7 @@ export default class ProjectDetails extends Component {
     if (saved) {
       selectedProject = JSON.parse(saved);
       const projectDetails = getProjectDetails(selectedProject.id);
-       scroll.scrollToTop(); 
+      scroll.scrollToTop();
       this.setState({
         selectedProject,
         projectDetails,
@@ -189,34 +194,55 @@ export default class ProjectDetails extends Component {
           <div className="description col-md-7">
             <h3>{selectedProject?.projectName}</h3>
             <p>{projectDetails?.description}</p>
-            <div className="frameworks">
-              <div>
-                <h6>Front-End</h6>
-                <ul>
-                  {projectDetails?.frameworks.frontEnd.map((data,i) => {
-                    return <li key={"d"+i}>{data}</li>;
-                  })}
-                </ul>
-              </div>
-              <div>
-                <h6>Back-End</h6>
-                <ul>
-                  {projectDetails?.frameworks.backEnd.map((data,i) => {
-                    return <li key={"d"+i}>{data}</li>;
-                  })}
-                </ul>
-              </div>
-              <div>
-                <h6>Others</h6>
-                <ul>
-                  {projectDetails?.frameworks.others.map((data,i) => {
-                    return <li key={"d"+i}>{data}</li>;
-                  })}
-                </ul>
-              </div>
+            <a href={projectDetails?.summary?.url} target="_blank" rel="noopener noreferrer">
+              Visit Site
+            </a>
+            <div className="repos">
+              <h6 className="my-2">Repositories</h6>
+              {projectDetails?.repos.length === 0 && 'Private Repositories'}
+              <ul>
+                {projectDetails?.repos.map((data,i) => {
+                  return (
+                    <li key={'d' + i}>
+                      {data.more && <p>Some repositories are private</p>}
+                      <a  href={data.link} target="_blank" rel="noopener noreferrer">
+                        {data.name}
+                      </a>
+                    </li>
+                  );
+                })}
+              </ul>
             </div>
           </div>
         </section>
+        <section className="frameworks">
+          <h6>Technologies Used</h6>
+          <div>
+            <p>Front-End</p>
+            <ul>
+              {projectDetails?.frameworks.frontEnd.map((data, i) => {
+                return <li key={'d' + i}>{data}</li>;
+              })}
+            </ul>
+          </div>
+          <div>
+            <p>Back-End</p>
+            <ul>
+              {projectDetails?.frameworks.backEnd.map((data, i) => {
+                return <li key={'d' + i}>{data}</li>;
+              })}
+            </ul>
+          </div>
+          <div>
+            <p>Others</p>
+            <ul>
+              {projectDetails?.frameworks.others.map((data, i) => {
+                return <li key={'d' + i}>{data}</li>;
+              })}
+            </ul>
+          </div>
+        </section>
+
         <section className="container mt-5">
           <h3 className="text-center">Development Process</h3>
           <ProcessCarousel
