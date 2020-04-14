@@ -292,44 +292,51 @@ export function getProjects() {
       id: 'borrocracyWeb',
       projectName: 'Borrocracy Web',
       url: 'https://borrocracy-b58eb.firebaseapp.com/',
-      profileImage: borrocracyWeb
+      profileImage: borrocracyWeb,
+      isWeb:true
     },
     {
       id: 'borrocracyMobile',
       projectName: 'Borrocracy Mobile',
       url: 'https://play.google.com/store/apps/details?id=com.borrocracy',
-      profileImage: borrocracyMobile
+      profileImage: borrocracyMobile,
+      isWeb:false
     },
     {
       id: 'wesgas',
       projectName: 'Wes Gas Mobile',
       url:
         'https://play.google.com/store/apps/details?id=eu.fulusi.wesgas.client',
-      profileImage: wesgas
+      profileImage: wesgas,
+      isWeb:false
     },
     {
       id: 'sep',
       projectName: 'Students Evaluation Protocal',
       url: 'https://sepfirebaseproject-cd7ec.firebaseapp.com/',
-      profileImage: sep
+      profileImage: sep,
+      isWeb:true
     },
        {
       id: 'fastFood',
       projectName: 'Fast Food Fast',
       url: 'https://fast-f-fast-staging.herokuapp.com',
-      profileImage: fastFood
+      profileImage: fastFood,
+      isWeb:true
     },
     {
       id: 'portfolio',
       projectName: 'Portfolio',
       url: 'https://soko-paul.web.app/',
-      profileImage: portfolio
+      profileImage: portfolio,
+      isWeb:true
     },
     {
       id: 'myDiary',
       projectName: 'My Diary',
       url: 'https://sokopaulsokool.github.io/MyDiary/UI',
-      profileImage: myDiary
+      profileImage: myDiary,
+      isWeb:true
     }
   ];
 }
