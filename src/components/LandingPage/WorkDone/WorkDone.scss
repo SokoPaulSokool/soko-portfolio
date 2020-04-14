@@ -1,21 +1,33 @@
 @import '../../../variables.scss';
+@import '../../../sass/style.scss';
 
 .work-done {
   width: 100vw;
 }
 
 .work-item {
-  width: 100%;
-  height: 250px;
+  width: 30%;
+  height: 45vh;
   background: $primary-color;
   position: relative;
   margin: 30px 10px !important;
   border-radius: 6px;
   background-color: $primary-color;
   transition: all 0.4s ease-in;
-  border: 2px solid $primary-color ;
+  // border: 1px solid $primary-color ;
+  box-shadow: 1px 1px 7px rgba(0, 0, 0, 0.45),   1px 1px 7px rgba($primary-color, 0.45);
   margin: 3px;
+  padding: 0 !important;
   cursor: pointer;
+  @include bp(max,966px){
+    width: 35%;
+  }
+  @include bp(max,766px){
+    width: 85%;
+    height: 65vh;
+  }
+
+
   &:hover {
     box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.45),   3px 3px 15px rgba($primary-color, 0.45);
     animation: bounce 0.3s ease-in-out;
@@ -25,18 +37,20 @@
   }
   img {
     width: 100%;
-    height: 100%;
+    height: 60%;
     object-fit: cover;
   }
 
   .buttons {
-    opacity: 0;
-    width: 100%;
-    height: 35%;
-    position: absolute;
+    margin: 0;
+    opacity: 1;
+    min-width: 10%;
+    height: 40%;
+    // position: absolute;
     bottom: 0;
     font-size: 0.8em;
     color: $white;
+    position: relative;
    
     transition: all 0.4s ease-in;
     .cover {
@@ -46,9 +60,28 @@
       top: 0;
       background-color: rgba(#000000, 0.6);
     }
+    .icon{
+      position: absolute;
+      left: 50%;
+      top: -20%;
+      border: 1px solid $accent-color;
+      border-radius: 50%;
+      transform: translateX( -50%);
+      // @include centerer;
+      @include size(60px);
+      background: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 2em;
+      img{
+        object-fit: contain;
+        height: 70%;
+      }
+    }
     .project-name{
       z-index: 30;
-      top: 2px;
+      top: 25%;
       width: 100%;
       position: absolute;
       text-align: center;
@@ -57,10 +90,18 @@
       position: absolute;
       top :50%;
       transform: translateY(-10%);
-      background: $primary-color;
-      border-radius: 10px;
+      // background: $primary-color;
+      // border-radius: 10px;
       color: white;
       padding: 2px 5px;
+      transform: scale(1);
+      transition: all 0.4 ease-in-out;
+      &:hover{
+        // color: $accent-color;
+        transform: scale(1.15);
+        background:  $accent-color;
+        border-radius: 10px;
+      }
       &-site {
         left: 10px;
       }
@@ -74,6 +115,7 @@
 .items {
   width: 100%;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: flex-end;
   flex-wrap: wrap;
@@ -84,7 +126,7 @@
     transform: scale(1);
   }
   50% {
-    transform: scale(1.1);
+    transform: scale(1.009);
   }
   100% {
     transform: scale(1);
