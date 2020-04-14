@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./About.scss";
 import redLif from "../../../assets/SVG/lifRed.svg";
 import profileImage from "../../../assets/samples/profileImage.jpeg";
+import paulResume from "../../../assets/pdf/Paul-Soko.pdf";
 
 export default class About extends Component {
   render() {
@@ -28,6 +29,8 @@ export default class About extends Component {
                 </div>
               </div>
             </div>
+            <a  className="btn  resume" href={paulResume} role="button">Resume</a>
+       
           </div>
           {/* <div className="col-12 col-md-5">
             <div className="bio">
@@ -73,9 +76,7 @@ export default class About extends Component {
                 </p>
               </li>
             </ul>
-            <div className="lif-red">
-              {/* <img src={redLif} alt="" /> */}
-            </div>
+            <div className="lif-red">{/* <img src={redLif} alt="" /> */}</div>
             <h5>Others</h5>
             <ol>
               <li>
