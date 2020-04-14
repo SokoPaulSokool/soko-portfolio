@@ -1,6 +1,6 @@
 @import  url("https://fonts.googleapis.com/css?family=Righteous&display=swap");
 @import  url("https://fonts.googleapis.com/css?family=Poppins:300,400,500i,900,900i&display=swap");
-
+@import "./variables.scss";
 
 body {
   margin: 0;
@@ -12,6 +12,7 @@ body {
 
   background-color: #F6F4F2;
   color: #252423;
+ 
   
 }
 
@@ -19,12 +20,76 @@ h1, h2, h3, h4 {
   font-family:   'Poppins', sans-serif !important; 
 }
 h1{
-  font-size: 3.5rem !important;
+  font-size: 4.5em !important;
   font-weight: 900 !important;
+  @include bp(max,1046px){
+    font-size: 4.3em !important;
+  }
+  @include bp(max,766px){
+    font-size: 4.2em !important;
+  }
 }
 
 p{
-  font-size: 0.8rem !important;
+  font-size: 0.8em !important;
+  @include bp(max,1046px){
+    font-size: 0.7em !important;
+    line-height: 1.5em;
+  }
+  @include bp(max,766px){
+    font-size: 0.7em !important;
+    line-height: 1.4em;
+  }
+}
+
+h2{
+  font-size: 1.8em !important;
+  @include bp(max,1046px){
+    font-size: 1.4em !important;
+  }
+  @include bp(max,766px){
+    font-size: 1.2em !important;
+  }
+}
+
+h3{
+  // font-size: 0.8em !important;
+  @include bp(max,1046px){
+    font-size: 1.2em !important;
+  }
+  @include bp(max,766px){
+    font-size: 1.1em !important;
+  }
+}
+
+h4{
+  font-size: 1.5em !important;
+  @include bp(max,1046px){
+    font-size: 1.3em !important;
+  }
+  @include bp(max,766px){
+    font-size: 1.4em !important;
+  }
+}
+
+h5{
+  font-size: 1.3em !important;
+  @include bp(max,1046px){
+    font-size: 1.1em !important;
+  }
+  @include bp(max,766px){
+    font-size: 1em !important;
+  }
+}
+h6{
+  // font-size: 0.8em !important;
+  @include bp(max,1046px){
+    font-size: 0.9em !important;
+  }
+  @include bp(max,766px){
+    font-size: 0.7em !important;
+  }
+  
 }
 
 code { 
