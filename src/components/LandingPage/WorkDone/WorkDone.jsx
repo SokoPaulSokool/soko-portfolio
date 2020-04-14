@@ -2,19 +2,18 @@ import React, { Component } from "react";
 // import { useHistory } from "react-router-dom";
 import "./WorkDone.scss";
 import ScrollMagic from "scrollmagic";
-import {  TimelineMax } from "gsap/all";
+import { TimelineMax } from "gsap/all";
 
 // import "debug.addIndicators";
 // import { ScrollMagicPluginGsap } from "scrollmagic-plugin-gsap";
-
 
 import { getProjects } from "../../../helpers/projectDetailsHelper";
 import laptop from "../../../assets/SVG/laptop.svg";
 import phone from "../../../assets/SVG/phone.svg";
 
-export function WorkItem({ data,position, visitSiteClick, viewDetails }) {
+export function WorkItem({ data, position, visitSiteClick, viewDetails }) {
   return (
-    <div className={"work-item work-item-"+position}>
+    <div className={"work-item work-item-" + position}>
       <img src={data.profileImage} alt="" />
       <div className="buttons">
         <div className="cover"></div>
@@ -28,16 +27,14 @@ export function WorkItem({ data,position, visitSiteClick, viewDetails }) {
             visitSiteClick(data.url);
           }}
           className="mybtn-site mybtn fa fa-globe "
-          style={{ fontSize: "2em" }}
           aria-hidden="true"
-        ></i> 
-       
+        ></i>
+
         <i
-        onClick={() => {
-          viewDetails(data);
-        }}
+          onClick={() => {
+            viewDetails(data);
+          }}
           className="mybtn-details mybtn fa fa-info-circle "
-          style={{ fontSize: "2em" }}
           aria-hidden="true"
         ></i>
         {/* <button
@@ -55,30 +52,46 @@ export function WorkItem({ data,position, visitSiteClick, viewDetails }) {
 export default class WorkDone extends Component {
   constructor(props) {
     super(props);
-    console.log(getProjects());
     this.state = {
       work: getProjects(),
     };
     // ScrollMagicPluginGsap(ScrollMagic, TimelineMax);
   }
 
-  componentDidMount(){
+  componentDidMount() {
     this.moveOnScroll();
   }
 
-
-  
   moveOnScroll = () => {
     var controller = new ScrollMagic.Controller({});
     var timelineOne = new TimelineMax();
     // timelineOne.to()
 
     timelineOne
-      .fromTo(".work-item-0", { translateX: "-30vw", rotateZ:"-30deg" }, { rotateZ:"0deg", translateX: 0 }, "in+=0.2")
-      .fromTo(".work-item-2", { translateX: "30vw", rotateZ:"30deg" }, {rotateZ:"0deg",  translateX: 0 }, "in+=0.2")
-      .fromTo(".work-item-3", { translateX: "-30vw" }, { translateX: 0 }, "in+=0.9")
-      .fromTo(".work-item-5", { translateX: "30vw" }, { translateX: 0 }, "in+=0.9")
-      .fromTo(".work-item-7", { translateX: "-30vw" }, { translateX: 0 }, "in+=0.2");
+      .fromTo(
+        ".work-item-0",
+        { translateX: "-30vw", rotateZ: "-30deg" },
+        { rotateZ: "0deg", translateX: 0 },
+        "in+=0.2"
+      )
+      .fromTo(
+        ".work-item-2",
+        { translateX: "30vw", rotateZ: "30deg" },
+        { rotateZ: "0deg", translateX: 0 },
+        "in+=0.2"
+      )
+      .fromTo(
+        ".work-item-3",
+        { translateX: "-30vw" },
+        { translateX: 0 },
+        "in+=0.9"
+      )
+      .fromTo(
+        ".work-item-5",
+        { translateX: "30vw" },
+        { translateX: 0 },
+        "in+=0.9"
+      );
     timelineOne.pause(0);
     new ScrollMagic.Scene({
       triggerElement: "#workDone",

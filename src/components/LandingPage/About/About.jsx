@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import "./About.scss";
-import redLif from "../../../assets/SVG/lifRed.svg";
 import profileImage from "../../../assets/samples/profileImage.jpeg";
 import paulResume from "../../../assets/pdf/Paul-Soko.pdf";
 

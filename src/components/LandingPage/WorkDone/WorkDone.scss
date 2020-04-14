@@ -1,5 +1,4 @@
 @import '../../../variables.scss';
-@import '../../../sass/style.scss';
 
 .work-done {
   width: 100vw;
@@ -8,17 +7,20 @@
 .work-item {
   width: 30%;
   height: 45vh;
-  background: $primary-color;
+  // background: $primary-color;
   position: relative;
   margin: 30px 10px !important;
-  border-radius: 6px;
-  background-color: $primary-color;
+  // border-radius: 6px;
+  // background-color: $primary-color;
   transition: all 0.4s ease-in;
   // border: 1px solid $primary-color ;
   box-shadow: 1px 1px 7px rgba(0, 0, 0, 0.45),   1px 1px 7px rgba($primary-color, 0.45);
   margin: 3px;
-  padding: 0 !important;
-  cursor: pointer;
+  border-radius: 10px 10px ;
+  padding: 5px;
+  overflow: hidden;
+  // padding: 0 !important;
+ 
   @include bp(max,966px){
     width: 35%;
   }
@@ -58,7 +60,11 @@
       height: 100%;
       position: absolute;
       top: 0;
-      background-color: rgba(#000000, 0.6);
+      border-top: 4px  solid $white;
+      border-left: 6px  solid $white;
+      border-right: 6px  solid $white;
+      border-radius: 20px ;
+      background-color: rgba($primary-dark-color, 1);
     }
     .icon{
       position: absolute;
@@ -95,12 +101,17 @@
       color: white;
       padding: 2px 5px;
       transform: scale(1);
+      font-size: 2em;
       transition: all 0.4 ease-in-out;
+      // background:  $accent-color;
+      border-radius: 60%;
       &:hover{
+        cursor: pointer;
         // color: $accent-color;
+        font-size: 2.1em;
         transform: scale(1.15);
         background:  $accent-color;
-        border-radius: 10px;
+        
       }
       &-site {
         left: 10px;

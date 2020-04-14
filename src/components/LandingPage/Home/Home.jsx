@@ -79,7 +79,7 @@ export default class Home extends Component {
       .to("#i-1", { y: 30, duration: 0.44, ease: "power2" }, "in+=0.32")
       .to("#i-2", { opacity: 0, duration: 0.32 }, "in+=0.32")
       .to("#i-3", { opacity: 0, scale: 3, duration: 0.32 }, "in+=2")
-      .to("#i-3", { opacity: 0, scale: 0.4, duration: 0.32 }, "in+=2")
+      .to("#i-3", { opacity: 0, scale: 0.4, duration: 0.52 }, "in+=2")
       .to("#i-4", { opacity: 0, duration: 0.32 }, "in+=0.32")
       .to("#i-5", { opacity: 0, duration: 0.32 }, "in+=0.7")
       .to("#i-2", { opacity: 1, duration: 0.32 }, "in+=0.32")
@@ -105,13 +105,13 @@ export default class Home extends Component {
             <h6>Collaboration</h6>
           </div>
           <div id="i-3" className="col-3 box box-2">
-            3
+          <i className="fa fa-heart" aria-hidden="true"></i>
           </div>
           <div id="i-4" className="col-3 box box-2">
             4
           </div>
           <div id="i-5" className="col-3 box box-2">
-            <h6>Fast Delivery</h6>{" "}
+            <h6>High Commitment</h6>
           </div>
           <div id="i-6" className="col-3 box box-2">
             <h6>Effective Communication</h6>
