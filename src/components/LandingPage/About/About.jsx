@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
-import './About.scss';
-import redLif from '../../../assets/SVG/lifRed.svg';
-import profileImage from '../../../assets/samples/profileImage.jpeg';
+import React, { Component } from "react";
+import "./About.scss";
+import redLif from "../../../assets/SVG/lifRed.svg";
+import profileImage from "../../../assets/samples/profileImage.jpeg";
 
 export default class About extends Component {
   render() {
@@ -12,7 +12,24 @@ export default class About extends Component {
         </div>
 
         <div className="row">
-          <div className="col-12 col-md-5">
+          <div className="col-12 col-md-5 data">
+            <div className="bio">
+              <div className="bio-circle__rotate"></div>
+              <div className="bio-data">
+                <div className="bio-circle">
+                  <img src={profileImage} alt="" />
+                </div>
+                <div className="bio-text">
+                  <h2>Soko Paul</h2>
+                  <p>
+                    I believe everything can be done through passion, commitment
+                    and hard work
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          {/* <div className="col-12 col-md-5">
             <div className="bio">
               <div className="bio-circle">
                 <img src={profileImage} alt="" />
@@ -25,7 +42,7 @@ export default class About extends Component {
                 </p>
               </div>
             </div>
-          </div>
+          </div> */}
           <div className="col-12 col-md-7">
             <ul className="principles text-center">
               <li>
@@ -57,7 +74,7 @@ export default class About extends Component {
               </li>
             </ul>
             <div className="lif-red">
-              <img src={redLif} alt="" />
+              {/* <img src={redLif} alt="" /> */}
             </div>
             <h5>Others</h5>
             <ol>
@@ -78,10 +95,8 @@ export default class About extends Component {
                   fresh.
                 </p>
               </li>
-                 <li>
-                <p>
-                  I love watching movies especially animations.
-                </p>
+              <li>
+                <p>I love watching movies especially animations.</p>
               </li>
             </ol>
           </div>

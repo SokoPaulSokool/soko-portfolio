@@ -13,8 +13,8 @@ export default class LandingPage extends Component {
       <div className="landing comp-view" style={navStyle}>
         <Home />
         <WorkDone history={this.props.history} />
-        <Skills />
         <About />
+        <Skills />
       </div>
     );
   }

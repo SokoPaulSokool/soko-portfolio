@@ -1,32 +1,73 @@
-@import '../../../variables.scss';
+@import "../../../variables.scss";
 
 .about {
+  min-height: 50vh;
+  margin-top: 10vh;
+  .data{
+    display: flex;
+    justify-content: center;
+    @include bp(max,766px){
+    height:50vh;
+    margin-bottom: 10vh;
+    }
+  }
+  h5 {
+    color: $primary-color;
+  }
   .bio {
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    border: 3px solid $primary-color;
+    // border: 3px solid $primary-color;
+   
     border-radius: 50%;
-    width: 30vw;
-    height: 30vw;
+    @include size(30vw);
+    position: relative;
+    @include bp(max,766px){
+      // @include center-block;
+      @include size(80vw);
+      
+    }
     &-circle {
       background: rgba($primary-color, 0.6);
       border-radius: 50%;
-      width: 15vw;
-      height: 15vw;
+      @include size(100%);
       overflow: hidden;
-        border: 1px solid $primary-color;
-        img{
+      border: 1px solid $primary-color;
+      @include bp(min,766px){
+        @include size(100%);
+      }
+      img {
         width: 100%;
         height: 100%;
         object-fit: cover;
       }
+      &__rotate {
+        background: rgba($primary-dark-color, 1);
+        animation: rotateCircle 90s ease-in 0s infinite alternate;
+        border: 8px solid rgba($white, 1);
+        border-radius: 50%;
+        border-style: dotted;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        transform: translate(-50%, -50%);
+        &:hover {
+          animation: rotateCircle 10s ease-in 0s infinite alternate;
+        }
+      }
     }
     &-text {
-      width: 80%;
+      width: 100%;
+      color: rgba($white, 1);
+    }  
+    &-data {
+      @include centerer;
     }
+
+    
   }
 
   .principles {
@@ -36,18 +77,16 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
+    // align-items: center;
     // flex-direction: column;
     justify-content: flex-start;
     li {
-    text-align: left;
+      text-align: left;
       padding: 0 10px;
       width: 50%;
       // background: green;
     }
-    h5{
-      color: $primary-color;
-    }
+   
     p {
       // font-size: 0.8em;
       // line-height: 1.2em;
@@ -58,7 +97,7 @@
     width: 100%;
     display: flex;
     justify-content: center;
-    margin-bottom: 60px;
+    margin-bottom: 20px;
 
     img {
       width: 40px;
@@ -66,4 +105,15 @@
       transform: rotate(180deg);
     }
   }
+
+  .side {
+    min-height: 40vh;
+    margin-bottom: 10vh;
+    @include bp(max, 766px) {
+      margin-top: 10vh;
+      margin-bottom: 0vh;
+    }
+  }
+
+ 
 }

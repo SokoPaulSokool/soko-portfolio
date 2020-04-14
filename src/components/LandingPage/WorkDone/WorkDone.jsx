@@ -46,7 +46,7 @@ export function WorkItem({ data,position, visitSiteClick, viewDetails }) {
         >
           View Details
         </button> */}
-        <h5 className="project-name">{data.projectName}</h5>
+        <h4 className="project-name">{data.projectName}</h4>
       </div>
     </div>
   );
