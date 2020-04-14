@@ -1,9 +1,45 @@
 @import '../../../variables.scss';
+@import '../../../sass/style.scss';
 
 ul {
   list-style: none;
   // display: flex;
   // justify-content: space-between;
+}
+.ff{
+  position: absolute;
+  width: 100%;
+  z-index: -5;
+  display: none;
+}
+
+.boxes{
+  position: absolute;
+  // width: 100%;
+  bottom: 0;
+  .box{ 
+      height: 200px;
+   
+      background: #FFCCBB;
+      margin: 5px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: rgba(#000000, 1);
+      border-radius: 10px;
+      
+      @include bp(max,766px){
+        h6{
+          font-size: 0.6em;
+        }
+        
+        height: 100px;
+      }
+  }
+  #i-2{
+    // width: 200px;
+    // border-radius: 50%;
+  }
 }
 
 .headers {
@@ -12,12 +48,19 @@ ul {
     display: flex;
     flex-direction: column;
     justify-content: center;
+   
+     
+    @include bp(max,766px){
+      min-height: 30vh;
+      margin-top: 5vh;
+    }
     h4 {
       margin-bottom: 2px;
       color: $primary-color;
     }
     h1 {
       line-height: 0.9;
+      color: rgba(#123146, 1);
     }
   }
 }
@@ -62,6 +105,10 @@ ul {
 .side{
   min-height: 40vh;
   margin-bottom: 10vh;
+  @include bp(max,766px){
+    margin-top: 10vh;
+    margin-bottom: 0vh;
+  }
 }
 
 .side-circle {
@@ -71,6 +118,15 @@ ul {
   position: absolute;
   top: -20%;
   left: 10%;
+  z-index: -1;
+  @include bp(max,766px){
+    width: 100%;
+    height: 100%;
+    top: 0%;
+    left: 0%;
+    @include centerer;
+    position: relative;
+  }
 
   &__rotate {
     animation: rotateCircle 30s ease-in 0s infinite alternate;
