@@ -43,7 +43,7 @@ export default class MyNavbar extends Component {
           <MDBContainer>
             <MDBNavbarBrand>
               <MDBNavLink to="">
-                <strong className="white-text">Soko Paul</strong>
+                <h4 className="">Soko Paul</h4>
               </MDBNavLink>
             </MDBNavbarBrand>
             <MDBNavbarToggler onClick={this.toggleCollapse('navbarCollapse')} />
@@ -78,9 +78,6 @@ export default class MyNavbar extends Component {
                     Skills
                   </Link>
                   {/* <MDBNavLink to="#skills">Skills</MDBNavLink> */}
-                </MDBNavItem>
-                <MDBNavItem>
-                  {/* <MDBNavLink to="process">Work Done</MDBNavLink> */}
                 </MDBNavItem>
                 <MDBNavItem>
                      <Link
