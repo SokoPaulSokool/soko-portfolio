@@ -46,8 +46,8 @@ export default class About extends Component {
             </div>
           </div> */}
           <div className="col-12 col-md-7">
-            <ul className="principles text-center">
-              <li>
+            <ul className="principles text-center container">
+              <li className="col-md-6 col-12">
                 <h5>Fast learner</h5>
                 <p>
                   I find it easy to learn new technologies. I have been in
@@ -56,7 +56,7 @@ export default class About extends Component {
                   and catch up as fast as possible.
                 </p>
               </li>
-              <li>
+              <li className="col-md-6 col-12">
                 <h5>Great Team Player</h5>
                 <p>
                   I love working in teams. Teams make work interesting, smooth
@@ -65,7 +65,7 @@ export default class About extends Component {
                   better developer.
                 </p>
               </li>
-              <li>
+              <li className="col-md-6 col-12">
                 <h5>Passionate About technology</h5>
                 <p>
                   I have so much passion about technology. My passion has made
