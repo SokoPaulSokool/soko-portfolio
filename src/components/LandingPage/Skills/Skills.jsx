@@ -1,23 +1,22 @@
-import React, { Component } from 'react';
-import './Skills.scss';
-import blueLif from '../../../assets/SVG/lifBlue.svg';
-import mySkills from '../../../assets/data/skills.json';
-
+import React, { Component } from "react";
+import "./Skills.scss";
+import blueLif from "../../../assets/SVG/lifBlue.svg";
+import mySkills from "../../../assets/data/skills.json";
 
 export class CollapsePage extends Component {
   state = {
-    collapseID: 'Languages',
+    collapseID: "Languages",
     data: [1, 2, 3, 4, 5, 6, 7],
-    skills: mySkills
+    skills: mySkills,
   };
 
-  toggleCollapse = collapseID => {
-    this.setState(prevState => ({
-      collapseID: prevState.collapseID !== collapseID ? collapseID : ''
+  toggleCollapse = (collapseID) => {
+    this.setState((prevState) => ({
+      collapseID: prevState.collapseID !== collapseID ? collapseID : "",
     }));
   };
 
-  colapseCheck = (skill,whenTrue,whenFalse) => {
+  colapseCheck = (skill, whenTrue, whenFalse) => {
     return this.state.collapseID === skill.title ? whenTrue : whenFalse;
   };
 
@@ -27,9 +26,16 @@ export class CollapsePage extends Component {
         {Object.keys(this.state.skills).map((dat, i) => {
           const skill = this.state.skills[dat];
           return (
-            <div className={"card "+this.colapseCheck(skill,'card-border','')} key={skill.title}>
+            <div
+              className={"card " + this.colapseCheck(skill, "card-border", "")}
+              key={skill.title}
+            >
               <div
-                className={this.state.collapseID === skill.title ? 'card-header card-header--highlight' : 'card-header card-header--no-highlight'}
+                className={
+                  this.state.collapseID === skill.title
+                    ? "card-header card-header--highlight"
+                    : "card-header card-header--no-highlight"
+                }
                 id="headingOne"
                 onClick={() => this.toggleCollapse(skill.title)}
               >
@@ -43,15 +49,13 @@ export class CollapsePage extends Component {
                   >
                     {skill.title}
                   </span>
-                 
-                  
                 </h5>
-                 <i className="header-icon fas fa-arrow-alt-circle-down"></i>
+                <i className="header-icon fas fa-arrow-alt-circle-down"></i>
               </div>
 
               <div
                 id="collapseOne"
-                className={'collapse ' + this.colapseCheck(skill,'show','')}
+                className={"collapse " + this.colapseCheck(skill, "show", "")}
                 aria-labelledby="headingOne"
                 data-parent="#accordion"
               >
@@ -59,7 +63,7 @@ export class CollapsePage extends Component {
                   <ul className="skill-drops">
                     {skill.details.map((detail, i) => {
                       return (
-                        <li key={i + 'ss'}>
+                        <li key={i + "ss"}>
                           <h6 className="skill-header">{detail.name}</h6>
                           <div className="rating">
                             <img className="" src={blueLif} alt="" />
@@ -96,41 +100,51 @@ export default class Skills extends Component {
               <CollapsePage />
             </div>
           </div>
-          <div className="col-12 col-md-7  p-3">
+          <div className="col-12 col-md-7 pp px-3">
             <h2>General Work Process</h2>
             <div className="process ">
-              <img alt="" src={blueLif} className="big-lif" />
+              {/* <img alt="" src={blueLif} className="big-lif" /> */}
               <div className="details">
                 <ul>
                   <li>
-                    <div className="circle"></div>
+                    <div className="circle">
+                      <h3>1</h3>
+                    </div>
                     <p>
-                     Analysing and designing mockups for creating appropriate UI components and architecting the styles codebase
+                      Analysing and designing mockups for creating appropriate
+                      UI components and architecting the styles codebase
                     </p>
                   </li>
                   <li>
-                    <div className="circle"></div>
+                    <div className="circle">
+                      <h3>2</h3>
+                    </div>
                     <p>
                       Testing code in multiple browsers to ensure cross browser
                       compatibility
                     </p>
                   </li>
                   <li>
-                    <div className="circle"></div>
-                    <p>
-                    Following coding style if required
-                    </p>
+                    <div className="circle">
+                      <h3>3</h3>
+                    </div>
+                    <p>Following coding style if required</p>
                   </li>
                   <li>
-                    <div className="circle"></div>
+                    <div className="circle">
+                      <h3>4</h3>
+                    </div>
                     <p>
                       Collaborating with UI/UX designers and backend developers
                     </p>
                   </li>
                   <li>
-                    <div className="circle"></div>
+                    <div className="circle">
+                      <h3>5</h3>
+                    </div>
                     <p>
-                     Consistently maintaining communication with all stakeholders
+                      Consistently maintaining communication with all
+                      stakeholders
                     </p>
                   </li>
                 </ul>

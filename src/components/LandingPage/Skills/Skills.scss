@@ -2,6 +2,7 @@
 
 .skills {
   margin-top: 200px;
+  margin-bottom: 20px;
 }
 .my-skills {
   background-repeat: no-repeat;
@@ -49,7 +50,7 @@
       }
     }
     .card-header--highlight {
-      background-color: $primary-color !important;
+      background-color: $primary-dark-color !important;
       span {
         color: $white !important;
       }
@@ -114,12 +115,26 @@
   }
 }
 
+.pp{
+  display: flex;
+  flex-direction: column;
+  @include bp(max,766px){
+    margin-top: 10vh;
+  }
+
+}
 .process {
   position: relative;
+  background: $primary-dark-color; 
+  flex: 1;
+  // height: 100vh;
+ 
 
   .big-lif {
     position: relative;
     transform: rotateX(180deg);
+    // display: none;
+
     // max-height: 110vh;
 
   }
@@ -130,11 +145,12 @@
     width: 100%;
     flex-wrap: wrap;
     justify-content: center;
-    position: absolute;
+    // position: absolute;
     left: 50%;
     transform: translateX(-50%);
     top: 5%;
     color:$white;
+    margin-bottom: 10vh;
 
     ul {
       padding: 0;
@@ -156,6 +172,10 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        @include bp(max,766px){
+          width: 100%;
+          margin: 20px 5px;
+        }
         &:nth-of-type(1) {
           width: 60%;
         }
@@ -164,6 +184,15 @@
           height: 50px;
           border-radius: 50%;
           background: white;
+          margin-bottom: 10px;
+          position: relative;
+          padding: 2px;
+          >* {
+            padding: 2px;
+            // font-size: 3em !important;
+            color: $accent-color;
+            @include centerer
+          }
         }
         p {
           color: white;
