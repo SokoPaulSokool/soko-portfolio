@@ -15,13 +15,18 @@ ul {
 
 .boxes{
   position: absolute;
-  // width: 100%;
-  bottom: 10vh;
+  width: 70%;
+  bottom: 0vh;
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 150px;
   @include bp(max,766px){
-    bottom: 19vh;
+    bottom: 12%;
+    width: 90%;
   }
   .box{ 
-      height: 150px;
+      min-height: 150px;
+      width: 30%;
    text-align: center;
       background: #FFCCBB;
       background: $primary-dark-color;
@@ -34,9 +39,9 @@ ul {
       border-radius: 10px;
       
       @include bp(max,766px){
-      
+        min-height: 100px;
         
-        height: 100px;
+        // height: 100px;
       }
   }
   #i-2{

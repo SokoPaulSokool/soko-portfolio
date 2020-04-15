@@ -97,23 +97,23 @@ export default class Home extends Component {
       <div className="container hero comp-view">
         <div className="circle-top"></div>
 
-        <div className="row boxes">
-          <div id="i-1" className="col-3 box box-2">
+        <div className=" boxes">
+          <div id="i-1" className=" box box-2">
             <h6>Quality Work</h6>
           </div>
-          <div id="i-2" className="col-3 box box-2">
+          <div id="i-2" className=" box box-2">
             <h6>Collaboration</h6>
           </div>
-          <div id="i-3" className="col-3 box box-2">
+          <div id="i-3" className=" box box-2">
           <i className="fa fa-heart" aria-hidden="true"></i>
           </div>
-          <div id="i-4" className="col-3 box box-2">
+          <div id="i-4" className=" box box-2">
             4
           </div>
-          <div id="i-5" className="col-3 box box-2">
+          <div id="i-5" className=" box box-2">
             <h6>High Commitment</h6>
           </div>
-          <div id="i-6" className="col-3 box box-2">
+          <div id="i-6" className=" box box-2">
             <h6>Effective Communication</h6>
           </div>
         </div>
