@@ -184,8 +184,8 @@ export default class ProjectDetails extends Component {
     // console.log(projectDetails?.process[processPosition]);
 
     return (
-      <div className="project-details container" style={navStyle}>
-        <section className="details row">
+      <div className="project-details container " style={navStyle}>
+        <section className="details  row ">
           <img
             src={selectedProject?.profileImage}
             alt=""
@@ -243,7 +243,7 @@ export default class ProjectDetails extends Component {
           </div>
         </section>
 
-        <section className="container mt-5">
+        <section className="container-fluid mt-5">
           <h3 className="text-center">Development Process</h3>
           <ProcessCarousel
             anim={this.state.anim}

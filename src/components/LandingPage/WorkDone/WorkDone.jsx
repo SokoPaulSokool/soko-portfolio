@@ -12,38 +12,53 @@ import laptop from "../../../assets/SVG/laptop.svg";
 import phone from "../../../assets/SVG/phone.svg";
 
 export function WorkItem({ data, position, visitSiteClick, viewDetails }) {
+  console.log(data);
   return (
     <div className={"work-item work-item-" + position}>
+      <div className="work-image">
+        <div className="image-cover"></div>
       <img src={data.profileImage} alt="" />
+      </div>
+      
       <div className="buttons">
         <div className="cover"></div>
+
         <div className="icon">
           {data.isWeb && <img src={laptop} alt="laptop" />}
           {!data.isWeb && <img src={phone} alt="laptop" />}
         </div>
+        <div className="project-name">
+          <h4>{data.projectName}</h4>
+          <p>{data.brief}</p>
+        </div>
+        <div className="ll">
+          <div className="mm">
+          <i
+            onClick={() => {
+              visitSiteClick(data.url);
+            }}
+            className="mybtn-site mybtn fa fa-globe "
+            aria-hidden="true"
+          ></i>
 
-        <i
-          onClick={() => {
-            visitSiteClick(data.url);
-          }}
-          className="mybtn-site mybtn fa fa-globe "
-          aria-hidden="true"
-        ></i>
+          <i
+            onClick={() => {
+              viewDetails(data);
+            }}
+            className="mybtn-details mybtn fa fa-info-circle "
+            aria-hidden="true"
+          ></i>
+          </div>
+         
+        </div>
 
-        <i
-          onClick={() => {
-            viewDetails(data);
-          }}
-          className="mybtn-details mybtn fa fa-info-circle "
-          aria-hidden="true"
-        ></i>
         {/* <button
          
           className="mybtn-details mybtn"
         >
           View Details
         </button> */}
-        <h4 className="project-name">{data.projectName}</h4>
+       
       </div>
     </div>
   );

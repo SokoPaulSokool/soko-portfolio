@@ -293,14 +293,16 @@ export function getProjects() {
       projectName: 'Borrocracy Web',
       url: 'https://borrocracy-b58eb.firebaseapp.com/',
       profileImage: borrocracyWeb,
-      isWeb:true
+      isWeb:true,
+      brief: 'Connecting lenders and borrowers using AI credit scoring system'
     },
     {
       id: 'borrocracyMobile',
       projectName: 'Borrocracy Mobile',
       url: 'https://play.google.com/store/apps/details?id=com.borrocracy',
       profileImage: borrocracyMobile,
-      isWeb:false
+      isWeb:false,
+      brief: 'Connecting lenders and borrowers using AI credit scoring system'
     },
     {
       id: 'wesgas',
@@ -308,35 +310,40 @@ export function getProjects() {
       url:
         'https://play.google.com/store/apps/details?id=eu.fulusi.wesgas.client',
       profileImage: wesgas,
-      isWeb:false
+      isWeb:false,
+      brief: 'Cooking gas and accessories pachasing app for WESGAS'
     },
     {
       id: 'sep',
       projectName: 'Students Evaluation Protocal',
       url: 'https://sepfirebaseproject-cd7ec.firebaseapp.com/',
       profileImage: sep,
-      isWeb:true
+      isWeb:true,
+      brief: 'Platform connecting parents to teacher as they monitor students performance in school'
     },
        {
       id: 'fastFood',
       projectName: 'Fast Food Fast',
       url: 'https://fast-f-fast-staging.herokuapp.com',
       profileImage: fastFood,
-      isWeb:true
+      isWeb:true,
+      brief: 'Managing fast food store online and enabling clients ordering fast foods online. '
     },
     {
       id: 'portfolio',
       projectName: 'Portfolio',
       url: 'https://soko-paul.web.app/',
       profileImage: portfolio,
-      isWeb:true
+      isWeb:true,
+      brief: 'Describing my software career, projects done and skills I have gained experience in'
     },
     {
       id: 'myDiary',
       projectName: 'My Diary',
       url: 'https://sokopaulsokool.github.io/MyDiary/UI',
       profileImage: myDiary,
-      isWeb:true
+      isWeb:true,
+      brief: 'Online diary, keep track of your life events. In the end all we are left with are memories.'
     }
   ];
 }

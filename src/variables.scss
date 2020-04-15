@@ -3,3 +3,9 @@ $primary-color: #2098d1;
 $primary-dark-color: #123146;
 $accent-color: rgb(224, 72, 21);
 $white: #ffffff;
+
+.nav-item{
+    .active{
+        background: $accent-color;
+    }
+}

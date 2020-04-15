@@ -15,10 +15,10 @@
   // background-color: $primary-color;
   transition: all 0.4s ease-in;
   // border: 1px solid $primary-color ;
-  box-shadow: 1px 1px 7px rgba(0, 0, 0, 0.45),   1px 1px 7px rgba($primary-color, 0.45);
+  // box-shadow: 1px 1px 7px rgba(0, 0, 0, 0.45),   1px 1px 7px rgba($primary-color, 0.45);
   margin: 3px;
-  border-radius: 10px 10px ;
-  padding: 5px;
+  border-radius: 20px  ;
+  padding: 2px;
   overflow: hidden;
   // padding: 0 !important;
  
@@ -28,34 +28,72 @@
   @include bp(max,766px){
     width: 85%;
     height: 65vh;
+    box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.45),   3px 3px 8px rgba($primary-color, 0.45);
   }
 
 
+
   &:hover {
-    box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.45),   3px 3px 15px rgba($primary-color, 0.45);
+    box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.45),   3px 3px 8px rgba($primary-color, 0.45);
     animation: bounce 0.3s ease-in-out;
     .buttons{
       opacity: 1;
     }
+    .image-cover{
+      opacity: 0;
+    }
   }
-  img {
+
+  .work-image{
     width: 100%;
-    height: 60%;
-    object-fit: cover;
+    height: 55%;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .image-cover{
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      @include centerer;
+      background: rgba($primary-dark-color, 0.12);
+      @include bp(max,766px){
+        opacity: 0;
+      }
+    }
   }
+  
 
   .buttons {
     margin: 0;
     opacity: 1;
     min-width: 10%;
-    height: 40%;
+    height: 45%;
+    padding-top: 14%;
+    // padding-bottom: 20px;
+    // padding: 20% 10px ;
     // position: absolute;
     bottom: 0;
     font-size: 0.8em;
     color: $white;
     position: relative;
+    display: flex;
+    flex-direction: column;
    
     transition: all 0.4s ease-in;
+    .ll{
+      position: absolute;
+      bottom: 10%;
+      height: 20px;
+      width: 100%;
+      padding: 0 10px;
+      .mm{
+        
+        position: relative;
+      }
+    }
     .cover {
       width: 100%;
       height: 100%;
@@ -88,9 +126,10 @@
     }
     .project-name{
       z-index: 30;
-      top: 25%;
-      width: 100%;
-      position: absolute;
+      // top: 25%;
+      width: 90%;
+      margin: 0 auto;
+      position: relative;
       text-align: center;
     }
     .mybtn {
@@ -99,12 +138,12 @@
       transform: translateY(-10%);
       // background: $primary-color;
       // border-radius: 10px;
-      color: white;
+      color: $white;
       padding: 2px 5px;
       transform: scale(1);
       font-size: 2em;
       transition: all 0.4 ease-in-out;
-      // background:  $accent-color;
+      background:  $accent-color;
       border-radius: 60%;
       &:hover{
         cursor: pointer;

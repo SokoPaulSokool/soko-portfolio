@@ -3,6 +3,15 @@
 .project-details {
   padding: 40px;
   margin-bottom: 30px;
+  padding: 40px 20px 0 20px;
+
+  @include bp(max,766px){
+    padding: 40px 20px 0 20px;
+  }
+  .container-fluid{
+    padding-left: 0;
+    padding-right: 0;
+  }
 
    .frameworks {
         // width: 100%;
@@ -15,12 +24,13 @@
           margin-bottom: 0 !important;
         }
         ul {
-          display: inline-flex;
+          display: flex;
+          flex-wrap: wrap;
           padding: 0;
 
           li {
-            margin: 0 10px;
-            padding: 0 0.5em;
+            margin: 5px 10px;
+            padding: 0.2em 0.5em;
             border-radius: 20px;
             background: $primary-color;
             color: $white;
@@ -31,12 +41,19 @@
       }
   .details {
     min-height: 250px;
+    padding: 0 20px;
+
     img {
       width: 50vw;
       height: 250px;
       object-fit: cover;
       padding: 0;
+
       border: 3px solid $primary-color;
+      @include bp(max,766px){
+        width: 100%;
+        margin-bottom: 10px;
+      }
     }
     .description {
       .repos {
@@ -111,18 +128,22 @@
         top: 70%;
         transform: translateX(-50%);
         color: $white;
-        background-color: #07356d;
+        background-color: $primary-dark-color;
         z-index: 10;
+        padding-top: 10px;
         box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.55);
+        @include bp(max,766px){
+          width: 100%;
+        }
       }
     }
   }
 
   .carousel-arrows {
     color: $primary-color;
-    position: absolute;
+    position: sticky;
     top: 35%;
-    z-index: 20;
+    z-index: 200;
     transform: translateY(-50%);
     width: 100%;
     .hide-arrow {
@@ -132,6 +153,9 @@
     div {
       position: absolute;
       font-size: 5em;
+      @include bp(max,766px){
+        font-size: 3.5em;
+      }
 
       &:hover {
         cursor: pointer;
@@ -140,10 +164,16 @@
     &__left {
       left: -10%;
       animation: arrowMotion 1s ease-in 0s infinite alternate;
+      @include bp(max,766px){
+        left: -1%;
+      }
     }
     &__right {
       right: -10%;
       animation: arrowMotion 1s ease-in 1s infinite alternate;
+      @include bp(max,766px){
+        right: -1%;
+      }
     }
   }
 }

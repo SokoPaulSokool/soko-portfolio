@@ -28,7 +28,7 @@ export default class About extends Component {
                 </div>
               </div>
             </div>
-            <a  className="btn  resume" href={paulResume} role="button">Resume</a>
+            <a  className="btn  resume" href={paulResume} role="button" target="_blank" rel="noopener noreferrer">Resume</a>
        
           </div>
           {/* <div className="col-12 col-md-5">
