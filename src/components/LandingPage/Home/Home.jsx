@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import ScrollMagic from "scrollmagic";
 import { gsap, MotionPathPlugin, TextPlugin, TimelineMax } from "gsap/all";
 import "./Home.scss";
+import { Link } from "react-scroll";
 
 // import "debug.addIndicators";
 import { ScrollMagicPluginGsap } from "scrollmagic-plugin-gsap";
@@ -22,14 +23,14 @@ export default class Home extends Component {
     // timelineOne.to()
 
     timelineOne
-      .fromTo("#i-2", { translateX: 0 }, { translateX: "-30vw" }, "in+=0.2")
+      .fromTo("#i-2", { translateX: 0 }, { translateX: "-100vw" }, "in+=0.2")
       .fromTo("#i-5", { translateX: 0 }, { translateX: "-60vw" }, "in")
-      .fromTo("#i-6", { translateX: 0 }, { translateX: "-60vw" }, "in")
+      .fromTo("#i-6", { translateX: 0 }, { translateX: "-100vw" }, "in")
       .fromTo("#i-1", { translateX: 0 }, { translateX: "-60vw" }, "in");
     timelineOne.pause(0);
     new ScrollMagic.Scene({
       triggerElement: ".boxes",
-      duration: "30%", // scroll distance
+      duration: "50%", // scroll distance
       triggerHook: 0.5,
       // triggerHook: "onEnter",
       loglevel: 2,
@@ -96,16 +97,28 @@ export default class Home extends Component {
     return (
       <div className="container hero comp-view">
         <div className="circle-top"></div>
+        <div className="resume btn">
+          <Link
+            activeClass=" nav-link"
+            to="workDone"
+            spy={true}
+            smooth={true}
+            offset={-70}
+            duration={500}
+          >
+            View My work
+          </Link>
+        </div>
 
         <div className=" boxes">
           <div id="i-1" className=" box box-2">
             <h6>Quality Work</h6>
           </div>
           <div id="i-2" className=" box box-2">
-            <h6>Collaboration</h6>
+            <h6>Smooth Collaboration</h6>
           </div>
           <div id="i-3" className=" box box-2">
-          <i className="fa fa-heart" aria-hidden="true"></i>
+            <i className="fa fa-heart" aria-hidden="true"></i>
           </div>
           <div id="i-4" className=" box box-2">
             4
@@ -120,17 +133,26 @@ export default class Home extends Component {
         <div className="row">
           <div className="col-md-6 col-12 headers">
             <div className="headers-details">
-              <h4 className="headers-details-1">Full Stack</h4>
-              <h1 className="headers-details-2">Software Engineer</h1>
+              <h4 className="headers-details-1">Hello, I'm</h4>
+              <h1 className="headers-details-2">Soko Paul</h1>
+              <h3 className="headers-details-2">
+                A full-stack software developer
+              </h3>
               <p className="headers-details-3">
-                Who enjoys every aspect of{" "}
+                I enjoy every aspect of{" "}
                 <span className="skill-1">designing and building</span> websites
                 & mobile apps from start to finish to provide{" "}
                 <span className="skill-2"> a good user experience</span>
               </p>
+              <p>
+                I am defined by{" "}
+                <span>
+                  <i className="fa fa-arrow-down" aria-hidden="true"></i>
+                </span>
+              </p>
             </div>
-            {/* <div className="menu">
-              <ul>
+            <div className="menu">
+              {/* <ul>
                 <li>
                   <Link
                     activeClass="active nav-link"
@@ -170,8 +192,8 @@ export default class Home extends Component {
                     <div className="indicators"></div>
                   </Link>
                 </li>
-              </ul>
-            </div> */}
+              </ul> */}
+            </div>
           </div>
           <div className="col-md-4 col-12 side">
             <div className="side-circle">
