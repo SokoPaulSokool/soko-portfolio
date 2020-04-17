@@ -69,19 +69,6 @@ export default class MyNavbar extends Component {
                 <MDBNavItem>
                      <Link
                     activeClass="active nav-link"
-                    to="skills"
-                    spy={true}
-                    smooth={true}
-                    offset={-70}
-                    duration={500}
-                  >
-                    Skills
-                  </Link>
-                  {/* <MDBNavLink to="#skills">Skills</MDBNavLink> */}
-                </MDBNavItem>
-                <MDBNavItem>
-                     <Link
-                    activeClass="active nav-link"
                     to="about"
                     spy={true}
                     smooth={true}
@@ -91,6 +78,19 @@ export default class MyNavbar extends Component {
                     About
                   </Link>
                   {/* <MDBNavLink to="#about">About</MDBNavLink> */}
+                </MDBNavItem>
+                <MDBNavItem>
+                     <Link
+                    activeClass="active nav-link"
+                    to="skills"
+                    spy={true}
+                    smooth={true}
+                    offset={-70}
+                    duration={500}
+                  >
+                    Skills
+                  </Link>
+                  {/* <MDBNavLink to="#skills">Skills</MDBNavLink> */}
                 </MDBNavItem>
               </MDBNavbarNav>
             </MDBCollapse>
