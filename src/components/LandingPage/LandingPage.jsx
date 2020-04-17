@@ -4,6 +4,7 @@ import Home from './Home/Home';
 import WorkDone from './WorkDone/WorkDone';
 import Skills from './Skills/Skills';
 import About from './About/About';
+import Footer from './Footer/Footer';
 
 export default class LandingPage extends Component {
 
@@ -15,6 +16,7 @@ export default class LandingPage extends Component {
         <WorkDone history={this.props.history} />
         <About />
         <Skills />
+        <Footer/>
       </div>
     );
   }
