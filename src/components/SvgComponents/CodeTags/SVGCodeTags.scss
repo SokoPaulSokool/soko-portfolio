@@ -1,4 +1,4 @@
-@import '../../../sass/style.scss';
+@import "../../../sass/style.scss";
 .anim,
 .anim svg {
   // position: absolute;
@@ -11,27 +11,28 @@
   stroke-width: 2;
 }
 
-
 .anim {
- 
-  path{
-    fill:none;
-    stroke:#2098d1;
+  path {
+    fill:none;stroke-miterlimit:10;
+    stroke: #2098d1;
   }
   .cls-1 {
     font-size: 55px;
+  }
+  .cls-1,
+  .cls-12,
+  .cls-7,
+  .cls-9 {
     font-family: FiraSans-Bold, Fira Sans;
-    font-weight: 700; 
-  }  .cls-1-s {
-    font-size:30.02px;font-family:FiraSans-Bold,Fira Sans;font-weight:700
+    font-weight: 700;
   }
   .cls-2 {
     fill: #80bcc3;
   }
-  .cls-13,
-  .cls-19,
+  .cls-11,
+  .cls-16,
   .cls-2,
-  .cls-26,
+  .cls-20,
   .cls-6,
   .cls-8 {
     stroke: #000;
@@ -43,19 +44,42 @@
   .cls-6 {
     fill: #3b4a59;
   }
+  .cls-7 {
+    font-size: 27.59px;
+  }
   .cls-8 {
     fill: #3987c0;
   }
-  .cls-13 {
-    fill: #d15d76;
+  .cls-9 {
+    font-size: 44.8px;
   }
-  .cls-19 {
-    fill: #4d9e7a;
-  }
-  .cls-25 {
+  .cls-10 {
     letter-spacing: -0.01em;
   }
-  .cls-26 {
+  .cls-11 {
+    fill: #d15d76;
+  }
+  .cls-12 {
+    font-size: 36.43px;
+  }
+  .cls-16 {
+    fill: #4d9e7a;
+  }
+  .cls-20 {
     fill: #dbaa5d;
+  }
+
+  #path-1 {
+    stroke: #2098d1;
+  }
+  #path-2 {
+    stroke: #d15d76;
+  }
+  #path-3 {
+    stroke: #dbaa5d;
+  }
+
+  #path-1, #path-2, #path-3{
+    fill:none;stroke-miterlimit:10;
   }
 }
