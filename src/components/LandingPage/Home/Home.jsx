@@ -7,6 +7,7 @@ import { Link } from "react-scroll";
 // import "debug.addIndicators";
 import { ScrollMagicPluginGsap } from "scrollmagic-plugin-gsap";
 import SVGCodeTags from "../../SvgComponents/CodeTags/SVGCodeTags";
+import "../../../assets/samples/displayImage.png";
 
 export default class Home extends Component {
   componentDidMount() {
@@ -79,8 +80,8 @@ export default class Home extends Component {
     timelineOne
       .to("#i-1", { y: 30, duration: 0.44, ease: "power2" }, "in+=0.32")
       .to("#i-2", { opacity: 0, duration: 0.32 }, "in+=0.32")
-      .to("#i-3", { opacity: 0, scale: 3, duration: 0.32 }, "in+=2")
-      .to("#i-3", { opacity: 0, scale: 0.4, duration: 0.52 }, "in+=2")
+      .to("#i-3", { opacity: 0, scale: 3, zIndex:99, duration: 0.32 }, "in+=2")
+      .to("#i-3", { opacity: 0, scale: 0.4, zIndex:1, duration: 0.52 }, "in+=2")
       .to("#i-4", { opacity: 0, duration: 0.32 }, "in+=0.32")
       .to("#i-5", { opacity: 0, duration: 0.32 }, "in+=0.7")
       .to("#i-2", { opacity: 1, duration: 0.32 }, "in+=0.32")

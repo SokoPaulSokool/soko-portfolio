@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./About.scss";
-import profileImage from "../../../assets/samples/profileImage.jpeg";
+import profileImage from "../../../assets/samples/profileImage.png";
 import paulResume from "../../../assets/pdf/Paul-Soko.pdf";
 
 export default class About extends Component {
@@ -8,7 +8,7 @@ export default class About extends Component {
     return (
       <div className="container comp-view about">
         <div className="row text-center">
-          <h2 className="col-12">About</h2>
+          <h2 className="col-12 mb-3">About</h2>
         </div>
 
         <div className="row">
@@ -19,7 +19,7 @@ export default class About extends Component {
                 <div className="bio-circle">
                   <img src={profileImage} alt="" />
                 </div>
-                <div className="bio-text">
+                <div className="bio-text mt-2">
                   <h2>Soko Paul</h2>
                   <p>
                     I believe everything can be done through passion, commitment
@@ -28,8 +28,20 @@ export default class About extends Component {
                 </div>
               </div>
             </div>
-            <a  className="btn  resume" href={paulResume} role="button" target="_blank" rel="noopener noreferrer">Resume</a>
-       
+            <p className="mt-4 text-center">
+              I'm a Full-Stack Developer in Kampala, Uganda. With over 4 years of demonstrated experience in developing websites and mobile applications. I have serious
+              passion for creating intuitive, dynamic user experiences in both
+              web and mobile applications.
+            </p>
+            <a
+              className="btn  resume"
+              href={paulResume}
+              role="button"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Resume
+            </a>
           </div>
           {/* <div className="col-12 col-md-5">
             <div className="bio">
@@ -45,7 +57,7 @@ export default class About extends Component {
               </div>
             </div>
           </div> */}
-          <div className="col-12 col-md-7">
+          <div className="col-12 col-md-7 data-2">
             <ul className="principles text-center container">
               <li className="col-md-6 col-12">
                 <h5>Fast learner</h5>

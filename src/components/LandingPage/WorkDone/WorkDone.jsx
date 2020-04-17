@@ -135,7 +135,7 @@ export default class WorkDone extends Component {
   render() {
     return (
       <div id="workDone" className="work-done container">
-        <div className="row text-center mb-5">
+        <div className="row text-center mb-2">
           <h2 className="col-12">Portfolio</h2>
         </div>
         <div className="row items">
