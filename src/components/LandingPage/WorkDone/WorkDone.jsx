@@ -12,7 +12,6 @@ import laptop from "../../../assets/SVG/laptop.svg";
 import phone from "../../../assets/SVG/phone.svg";
 
 export function WorkItem({ data, position, visitSiteClick, viewDetails }) {
-  console.log(data);
   return (
     <div className={"work-item work-item-" + position}>
       <div className="work-image">
@@ -128,7 +127,6 @@ export default class WorkDone extends Component {
   };
 
   visitSiteClick = (data) => {
-    console.log(data);
     window.open(data, "_blank");
   };
 
