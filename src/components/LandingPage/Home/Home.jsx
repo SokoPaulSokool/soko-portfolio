@@ -143,7 +143,7 @@ export default class Home extends Component {
                 I enjoy every aspect of{" "}
                 <span className="skill-1">designing and building</span> websites
                 & mobile apps from start to finish to provide{" "}
-                <span className="skill-2"> a good user experience</span>
+                <span className="skill-2"> amazing user experiences</span>
               </p>
               <p>
                 I am defined by{" "}

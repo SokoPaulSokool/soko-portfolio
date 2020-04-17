@@ -42,7 +42,7 @@
     position: relative;
     @include bp(max,766px){
       // @include center-block;
-      @include size(80vw);
+      @include size(85vw);
       
     }
     &-circle {
@@ -55,6 +55,9 @@
       @include bp(max,766px){
         // @include size(100%);
         @include size(45vw);
+        p{
+          font-size: 0.7em;
+        }
       }
       img {
         @include size(100%);

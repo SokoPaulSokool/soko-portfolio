@@ -50,7 +50,7 @@ ul {
     min-height: 150px;
     @include bp(max, 766px) {
       // position: relative;
-      bottom: 5%;
+      bottom: -2%;
       width: 90%;
     }
 

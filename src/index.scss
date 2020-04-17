@@ -12,6 +12,8 @@ body {
 
   background-color: #F6F4F2;
   color: #252423;
+
+  // font-size: calc(14px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
  
   
 }
@@ -37,7 +39,7 @@ p{
     line-height: 1.5em;
   }
   @include bp(max,766px){
-    font-size: 0.7em !important;
+    font-size: 0.8em !important;
     line-height: 1.4em;
   }
 }
