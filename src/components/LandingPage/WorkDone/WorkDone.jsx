@@ -1,54 +1,60 @@
-import React, { Component } from "react";
-// import { useHistory } from "react-router-dom";
-import "./WorkDone.scss";
-import ScrollMagic from "scrollmagic";
-import { TimelineMax } from "gsap/all";
+import React, {useEffect, useState} from 'react';
+import './WorkDone.scss';
+import ScrollMagic from 'scrollmagic';
+import {TimelineMax} from 'gsap/all';
 
-// import "debug.addIndicators";
-// import { ScrollMagicPluginGsap } from "scrollmagic-plugin-gsap";
+import {getProjects} from '../../../helpers/projectDetailsHelper';
+import laptop from '../../../assets/SVG/laptop.svg';
+import phone from '../../../assets/SVG/phone.svg';
+import {useNavigate} from 'react-router-dom';
 
-import { getProjects } from "../../../helpers/projectDetailsHelper";
-import laptop from "../../../assets/SVG/laptop.svg";
-import phone from "../../../assets/SVG/phone.svg";
-
-export function WorkItem({ data, position, visitSiteClick, viewDetails }) {
+export function WorkItem({data, position, visitSiteClick, viewDetails}) {
   return (
-    <div className={"work-item work-item-" + position}>
-      <div className="work-image">
+    <div className={'work-item work-item-' + position}>
+      <div
+        className="work-image"
+        onClick={() => {
+          viewDetails(data);
+        }}>
         <div className="image-cover"></div>
-      <img src={data.profileImage} alt="" />
+        <img src={data.profileImage} alt="" />
       </div>
-      
+
       <div className="buttons">
         <div className="cover"></div>
 
-        <div className="icon">
+        <div
+          className="icon"
+          onClick={() => {
+            viewDetails(data);
+          }}>
           {data.isWeb && <img src={laptop} alt="laptop" />}
           {!data.isWeb && <img src={phone} alt="laptop" />}
         </div>
-        <div className="project-name">
+        <div
+          className="project-name"
+          onClick={() => {
+            viewDetails(data);
+          }}>
           <h4>{data.projectName}</h4>
           <p>{data.brief}</p>
         </div>
         <div className="ll">
           <div className="mm">
-          <i
-            onClick={() => {
-              visitSiteClick(data.url);
-            }}
-            className="mybtn-site mybtn fa fa-globe "
-            aria-hidden="true"
-          ></i>
+            <i
+              onClick={() => {
+                visitSiteClick(data.url);
+              }}
+              className="mybtn-site mybtn fa fa-globe "
+              aria-hidden="true"></i>
 
-          <i
-            onClick={() => {
-              viewDetails(data);
-            }}
-            className="mybtn-details mybtn fa fa-info-circle "
-            aria-hidden="true"
-          ></i>
+            <i
+              onClick={() => {
+                viewDetails(data);
+              }}
+              className="mybtn-details mybtn fa fa-info-circle "
+              aria-hidden="true"></i>
           </div>
-         
         </div>
 
         {/* <button
@@ -57,59 +63,44 @@ export function WorkItem({ data, position, visitSiteClick, viewDetails }) {
         >
           View Details
         </button> */}
-       
       </div>
     </div>
   );
 }
 
-export default class WorkDone extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      work: getProjects(),
-    };
-    // ScrollMagicPluginGsap(ScrollMagic, TimelineMax);
-  }
+const WorkDone = () => {
+  let navigate = useNavigate();
+  const [work, setWork] = useState([]);
 
-  componentDidMount() {
-    this.moveOnScroll();
-  }
+  useEffect(() => {
+    setWork(getProjects());
+    moveOnScroll();
+    return () => {};
+  }, []);
 
-  moveOnScroll = () => {
+  const moveOnScroll = () => {
     var controller = new ScrollMagic.Controller({});
     var timelineOne = new TimelineMax();
-    // timelineOne.to()
 
     timelineOne
       .fromTo(
-        ".work-item-0",
-        { translateX: "-30vw", rotateZ: "-30deg" },
-        { rotateZ: "0deg", translateX: 0 },
-        "in+=0.2"
+        '.work-item-0',
+        {translateX: '-30vw', rotateZ: '-30deg'},
+        {rotateZ: '0deg', translateX: 0},
+        'in+=0.2'
       )
       .fromTo(
-        ".work-item-2",
-        { translateX: "30vw", rotateZ: "30deg" },
-        { rotateZ: "0deg", translateX: 0 },
-        "in+=0.2"
+        '.work-item-2',
+        {translateX: '30vw', rotateZ: '30deg'},
+        {rotateZ: '0deg', translateX: 0},
+        'in+=0.2'
       )
-      .fromTo(
-        ".work-item-3",
-        { translateX: "-30vw" },
-        { translateX: 0 },
-        "in+=0.9"
-      )
-      .fromTo(
-        ".work-item-5",
-        { translateX: "30vw" },
-        { translateX: 0 },
-        "in+=0.9"
-      );
+      .fromTo('.work-item-3', {translateX: '-30vw'}, {translateX: 0}, 'in+=0.9')
+      .fromTo('.work-item-5', {translateX: '30vw'}, {translateX: 0}, 'in+=0.9');
     timelineOne.pause(0);
     new ScrollMagic.Scene({
-      triggerElement: "#workDone",
-      duration: "70%", // scroll distance
+      triggerElement: '#workDone',
+      duration: '70%', // scroll distance
       triggerHook: 0.5,
       // triggerHook: "onEnter",
       loglevel: 2,
@@ -121,38 +112,38 @@ export default class WorkDone extends Component {
       .addTo(controller);
   };
 
-  handleWorkClick = (data) => {
-    localStorage.setItem("selectedProject", JSON.stringify(data));
-    this.props.history.push("/details");
+  const handleWorkClick = (data) => {
+    localStorage.setItem('selectedProject', JSON.stringify(data));
+    navigate('/details');
   };
 
-  visitSiteClick = (data) => {
-    window.open(data, "_blank");
+  const visitSiteClick = (data) => {
+    window.open(data, '_blank');
   };
 
-  render() {
-    return (
-      <div id="workDone" className="work-done container">
-        <div className="row text-center mb-2">
-          <h2 className="col-12">Portfolio</h2>
-        </div>
-        <div className="row items">
-          {this.state.work.map((k, i) => {
-            return (
-              <WorkItem
-                id={"work-item" + i}
-                key={"work-item-" + i}
-                // onClick={this.handleWorkClick}
-
-                data={k}
-                position={i}
-                viewDetails={this.handleWorkClick}
-                visitSiteClick={this.visitSiteClick}
-              />
-            );
-          })}
-        </div>
+  return (
+    <div id="workDone" className="work-done container">
+      <div className="row text-center mb-2">
+        <h2 className="col-12">Portfolio</h2>
       </div>
-    );
-  }
-}
+      <div className="row items">
+        {work.map((k, i) => {
+          return (
+            <WorkItem
+              id={'work-item' + i}
+              key={'work-item-' + i}
+              // onClick={this.handleWorkClick}
+
+              data={k}
+              position={i}
+              viewDetails={handleWorkClick}
+              visitSiteClick={visitSiteClick}
+            />
+          );
+        })}
+      </div>
+    </div>
+  );
+};
+
+export default WorkDone;

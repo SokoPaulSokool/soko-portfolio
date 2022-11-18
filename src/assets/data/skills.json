@@ -62,9 +62,10 @@
   "projectManagementTools": {
     "title": "Project Management Tools",
     "details": [
-      { "name": "Pivotal Tracker", "rate": "70%" }
+      { "name": "Pivotal Tracker", "rate": "70%" },
+      { "name": "Trello", "rate": "70%" }
     ],
-    "summary": "This tool helps me manage abd plan my work ahead of time"
+    "summary": "These tools help me manage and plan my work ahead of time"
 
   }
 }
