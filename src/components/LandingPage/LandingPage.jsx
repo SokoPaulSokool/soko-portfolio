@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './LandingPage.scss';
 import Home from './Home/Home';
 import WorkDone from './WorkDone/WorkDone';
@@ -6,18 +6,14 @@ import Skills from './Skills/Skills';
 import About from './About/About';
 import Footer from './Footer/Footer';
 
-export default class LandingPage extends Component {
-
-  render() {
-    const navStyle = { marginTop: '4rem' };
-    return (
-      <div className="landing comp-view" style={navStyle}>
-        <Home />
-        <WorkDone history={this.props.history} />
-        <About />
-        <Skills />
-        <Footer/>
-      </div>
-    );
-  }
+export default function LandingPage() {
+  return (
+    <div className="landing comp-view" style={{marginTop: '4rem'}}>
+      <Home />
+      <WorkDone />
+      <About />
+      <Skills />
+      <Footer />
+    </div>
+  );
 }

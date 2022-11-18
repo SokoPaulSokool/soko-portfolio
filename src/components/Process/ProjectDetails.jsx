@@ -1,22 +1,16 @@
-import React, { Component } from 'react';
-import { MDBIcon } from 'mdbreact';
-import { animateScroll as scroll } from 'react-scroll';
+import React, {Component} from 'react';
+import {MDBIcon} from 'mdbreact';
+import {animateScroll as scroll} from 'react-scroll';
 import './ProjectDetails.scss';
-import { getProjectDetails } from '../../helpers/projectDetailsHelper';
+import {getProjectDetails} from '../../helpers/projectDetailsHelper';
 
-export function ProcessCarouselDetails({
-  position,
-  anim,
-  process,
-  processPosition
-}) {
-  // console.log(process);
+export function ProcessCarouselDetails({position, anim, process, processPosition}) {
   return (
     <div className={anim + ' carousel-process-' + position}>
       <div className="carousel-process__img">
         <img src={process?.image} alt="" />
       </div>
-      <div className="carousel-process__details container">
+      {/* <div className="carousel-process__details container">
         <div className="">
           <h5>Step {processPosition + 1}</h5>
           <h6>{process?.step}</h6>
@@ -33,7 +27,7 @@ export function ProcessCarouselDetails({
             <p>{process?.solution}</p>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }
@@ -45,7 +39,7 @@ export function ProcessCarousel({
   process,
   hideArrowLeft,
   hideArrowRight,
-  processPosition
+  processPosition,
 }) {
   return (
     <div className="carousel">
@@ -55,16 +49,14 @@ export function ProcessCarousel({
           className={'carousel-arrows__left ' + hideArrowLeft}
           onClick={() => {
             leftCLick();
-          }}
-        >
+          }}>
           <MDBIcon icon="chevron-left" />
         </div>
         <div
           className={'carousel-arrows__right ' + hideArrowRight}
           onClick={() => {
             rightCLick();
-          }}
-        >
+          }}>
           <MDBIcon icon="chevron-right" />
         </div>
       </div>
@@ -99,16 +91,15 @@ export default class ProjectDetails extends Component {
         projectDetails,
         processPosition: 0,
         hideArrowLeft: '',
-        hideArrowRight: 'hide-arrow'
+        hideArrowRight: 'hide-arrow',
       });
     }
-    //  console.log(selectedProject);
   }
 
-  state = { anim: { one: 'one', two: 'two' } };
-  leftCLick = e => {
+  state = {anim: {one: 'one', two: 'two'}};
+  leftCLick = (e) => {
     let processLength = this.state.projectDetails.process.length;
-    let { processPosition } = this.state;
+    let {processPosition} = this.state;
     let hideArrowLeft = '';
     let hideArrowRight = '';
     if (processPosition >= 0 && processPosition < processLength - 1) {
@@ -121,29 +112,20 @@ export default class ProjectDetails extends Component {
 
       hideArrowLeft = 'hide-arrow';
     }
-    //   if(processPosition < 0){
-    //   processPosition = 0
-    //   hideArrowRight = "hide-arrow"
 
-    // }else{
-    //   //  hideArrowLeft = ""
-    // }
-    console.log(processPosition);
-
-    //  hideArrowLeft:"hide-arrow",hideArrowRight:""
     this.setState({
-      anim: { ...this.state.anim, one: 'left-one', two: 'left-two' },
+      anim: {...this.state.anim, one: 'left-one', two: 'left-two'},
       processPosition,
       hideArrowLeft,
-      hideArrowRight
+      hideArrowRight,
     });
     setTimeout(() => {
-      this.setState({ anim: { ...this.state.anim, one: '', two: '' } });
+      this.setState({anim: {...this.state.anim, one: '', two: ''}});
     }, 1000);
   };
-  rightCLick = e => {
+  rightCLick = (e) => {
     let processLength = this.state.projectDetails.process.length;
-    let { processPosition } = this.state;
+    let {processPosition} = this.state;
     let hideArrowLeft = '';
     let hideArrowRight = '';
     if (processPosition >= 0 && processPosition < processLength) {
@@ -151,46 +133,32 @@ export default class ProjectDetails extends Component {
       hideArrowRight = '';
       hideArrowLeft = '';
     }
-    //  if(processPosition >= processLength-1){
-    //   processPosition = processLength-1;
-    //   hideArrowRight = "hide-arrow"
-    // }
+
     if (processPosition <= 0) {
       processPosition = 0;
       hideArrowRight = 'hide-arrow';
     } else {
       hideArrowLeft = '';
     }
-    console.log(processPosition, 'right');
     this.setState({
-      anim: { ...this.state.anim, one: 'right-one', two: 'right-two' },
+      anim: {...this.state.anim, one: 'right-one', two: 'right-two'},
       processPosition,
       hideArrowLeft,
-      hideArrowRight
+      hideArrowRight,
     });
     setTimeout(() => {
-      this.setState({ anim: { ...this.state.anim, one: '', two: '' } });
+      this.setState({anim: {...this.state.anim, one: '', two: ''}});
     }, 1000);
   };
   render() {
-    const navStyle = { marginTop: '4rem' };
-    const {
-      selectedProject,
-      projectDetails,
-      processPosition,
-      hideArrowLeft,
-      hideArrowRight
-    } = this.state;
-    // console.log(projectDetails?.process[processPosition]);
+    const navStyle = {marginTop: '4rem'};
+    const {selectedProject, projectDetails, processPosition, hideArrowLeft, hideArrowRight} =
+      this.state;
 
     return (
       <div className="project-details container " style={navStyle}>
         <section className="details  row ">
-          <img
-            src={selectedProject?.profileImage}
-            alt=""
-            className="col-md-5"
-          />
+          <img src={selectedProject?.profileImage} alt="" className="col-md-5" />
           <div className="description col-md-7">
             <h3>{selectedProject?.projectName}</h3>
             <p>{projectDetails?.description}</p>
@@ -201,11 +169,11 @@ export default class ProjectDetails extends Component {
               <h6 className="my-2">Repositories</h6>
               {projectDetails?.repos.length === 0 && 'Private Repositories'}
               <ul>
-                {projectDetails?.repos.map((data,i) => {
+                {projectDetails?.repos.map((data, i) => {
                   return (
                     <li key={'d' + i}>
                       {data.more && <p>Some repositories are private</p>}
-                      <a  href={data.link} target="_blank" rel="noopener noreferrer">
+                      <a href={data.link} target="_blank" rel="noopener noreferrer">
                         {data.name}
                       </a>
                     </li>

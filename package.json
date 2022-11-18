@@ -1,37 +1,44 @@
 {
-  "name": "portfolio",
+  "name": "portfolio-react",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.3.2",
-    "@testing-library/user-event": "^7.1.2",
-    "animejs": "^3.2.0",
-    "bootstrap": "^4.4.1",
-    "gsap": "^3.2.6",
-    "mdbreact": "^4.25.0",
-    "node-sass": "^4.13.0",
-    "react": "^16.12.0",
-    "react-animejs": "^0.5.4",
-    "react-dom": "^16.12.0",
-    "react-gsap": "^1.2.0",
-    "react-router-dom": "^5.1.2",
-    "react-scripts": "3.3.1",
-    "react-scroll": "^1.7.16",
-    "react-visibility-sensor": "^5.1.1",
-    "scrollmagic": "^2.0.7",
-    "scrollmagic-plugin-gsap": "^1.0.4"
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "@types/jest": "^27.5.2",
+    "@types/node": "^16.18.3",
+    "@types/react": "^18.0.25",
+    "@types/react-dom": "^18.0.9",
+    "animejs": "^3.2.1",
+    "bootstrap": "^5.2.2",
+    "gsap": "^3.11.3",
+    "mdbreact": "4.25.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-gsap": "^3.2.1",
+    "react-router-dom": "^6.4.3",
+    "react-scripts": "5.0.1",
+    "react-scroll": "^1.8.8",
+    "sass": "^1.56.1",
+    "scrollmagic": "^2.0.8",
+    "scrollmagic-plugin-gsap": "^1.0.4",
+    "typescript": "^4.9.3",
+    "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
     "serve:prod": "yarn build && node server.js",
     "build": "react-scripts build",
-    "deploy": "yarn build && firebase deploy",
+    "deploy": "yarn build && firebase deploy --project soko-paul",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
   },
   "browserslist": {
     "production": [

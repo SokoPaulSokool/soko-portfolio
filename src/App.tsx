@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import './App.scss';
 import LandingPage from './components/LandingPage/LandingPage';
 import Process from './components/Process/ProjectDetails';
@@ -10,10 +10,10 @@ function App() {
     <div className="App">
       <Router>
         <MyNavbar />
-        <Switch>
-          <Route exact path="/" component={LandingPage} />
-          <Route exact path="/details" component={Process} />
-        </Switch>
+        <Routes>
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/details" element={<Process />} />
+        </Routes>
       </Router>
     </div>
   );
